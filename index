@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Danielli Arçari | Data Analyst</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #111;
+    }
 
+    header {
+      background: #111;
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 32px;
+    }
+
+    header p {
+      color: #bbb;
+      max-width: 600px;
+      margin: 10px auto;
+    }
+
+    .buttons a {
+      margin: 10px;
+      padding: 10px 20px;
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      border-left: 4px solid #2563eb;
+      padding-left: 10px;
+    }
+
+    .insights li {
+      margin-bottom: 10px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      margin-right: 10px;
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Danielli Arçari</h1>
+  <h2>Data Analyst em formação | SQL | Python | Análise de Dados</h2>
+  <p>Transição de carreira com foco em análise de dados orientada à tomada de decisão.</p>
+
+  <div class="buttons">
+    <a href="#projetos">Ver Projetos</a>
+    <a href="https://www.linkedin.com/in/danielli-arcari/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/danielli-arcari" target="_blank">GitHub</a>
+  </div>
+</header>
+
+<section>
+  <h2>Sobre</h2>
+  <p>
+    Profissional com 16 anos de experiência na área jurídica, atualmente em transição de carreira para Data Analytics.
+    Ao longo da minha trajetória, desenvolvi forte capacidade analítica, pensamento crítico e tomada de decisão baseada em evidências.
+  </p>
+
+  <p>
+    Hoje aplico essas habilidades na análise de dados, utilizando Python, SQL e ferramentas de visualização para transformar dados em insights acionáveis.
+    Meu foco é apoiar decisões estratégicas com base em dados reais, identificando padrões, inconsistências e oportunidades de melhoria.
+  </p>
+</section>
+
+<section>
+  <h2>Principais Insights</h2>
+  <ul class="insights">
+    <li>Correlação fraca (0,24) entre população e emissões de CO₂, indicando maior influência de fatores econômicos</li>
+    <li>Identificação da loja com menor desempenho para decisão estratégica de venda</li>
+    <li>Predominância de baixa escolaridade (67%) no sistema prisional, indicando padrão estrutural consistente</li>
+  </ul>
+</section>
+
+<section id="projetos">
+  <h2>Projetos</h2>
+
+  <div class="projects">
+
+    <div class="card">
+      <h3>Desempenho de Lojas</h3>
+      <p><strong>Problema:</strong> Identificar loja com pior desempenho.</p>
+      <p><strong>Insight:</strong> Loja 4 apresenta menor faturamento e ticket médio.</p>
+      <p><strong>Tecnologias:</strong> Python, Pandas, Matplotlib</p>
+      <a href="https://colab.research.google.com/drive/1p_M7tZJjJad6VLuOshbRZ9mlx0wmhxNV" target="_blank">Ver Análise</a>
+      <a href="https://github.com/danielli-arcari/Alura_Store" target="_blank">GitHub</a>
+    </div>
+
+    <div class="card">
+      <h3>Emissões no Brasil</h3>
+      <p><strong>Problema:</strong> Entender fatores das emissões.</p>
+      <p><strong>Insight:</strong> Baixa correlação entre população e emissão.</p>
+      <p><strong>Tecnologias:</strong> Python, Pandas, Plotly</p>
+      <a href="https://colab.research.google.com/drive/1YBaPAhDFxXgqzrln16BEvDN3bMzYvaTr" target="_blank">Ver Análise</a>
+      <a href="https://github.com/danielli-arcari/analise_gases_efeitoestufa" target="_blank">GitHub</a>
+    </div>
+
+    <div class="card">
+      <h3>População Prisional MG</h3>
+      <p><strong>Problema:</strong> Identificar padrões demográficos.</p>
+      <p><strong>Insight:</strong> 67% com baixa escolaridade.</p>
+      <p><strong>Tecnologias:</strong> Python, Pandas</p>
+      <a href="https://colab.research.google.com/drive/1ESr8ZIiVcNlW785A_7c3kQjfPLPLXbCu" target="_blank">Ver Análise</a>
+      <a href="https://github.com/danielli-arcari/analisededados_populacaoprisionalMG_2017a2024" target="_blank">GitHub</a>
+    </div>
+
+    <div class="card">
+      <h3>Banco de Dados com SQLAlchemy</h3>
+      <p><strong>Problema:</strong> Simular banco relacional.</p>
+      <p><strong>Insight:</strong> Domínio inicial de modelagem de dados.</p>
+      <p><strong>Tecnologias:</strong> Python, SQLAlchemy, SQLite</p>
+      <a href="https://colab.research.google.com/drive/11rNKtMQ2Mb6GTxKYf4jkxI3C56tacr36" target="_blank">Ver Análise</a>
+      <a href="https://github.com/danielli-arcari/InstituicaoFinanceira_com_SQLAlchemy" target="_blank">GitHub</a>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Certificados</h2>
+  <ul>
+    <li>Google IT Support :contentReference[oaicite:0]{index=0}</li>
+    <li>Fundamentos de Python e Dados (Alura ONE) :contentReference[oaicite:1]{index=1}</li>
+    <li>Iniciante em Programação (Alura ONE) :contentReference[oaicite:2]{index=2}</li>
+    <li>Desenvolvimento Pessoal (Alura ONE) :contentReference[oaicite:3]{index=3}</li>
+    <li>Análise Exploratória de Dados (ADA) :contentReference[oaicite:4]{index=4}</li>
+    <li>Elas+ Tech Data Analytics (ADA) :contentReference[oaicite:5]{index=5}</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Formação</h2>
+  <ul>
+    <li>Bacharelado em Direito</li>
+    <li>Graduação em Ciência da Computação (em andamento)</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Conecte-se comigo</p>
+  <p>
+    <a href="https://www.linkedin.com/in/danielli-arcari/" style="color:#fff;">LinkedIn</a> |
+    <a href="https://github.com/danielli-arcari" style="color:#fff;">GitHub</a>
+  </p>
+</footer>
+
+</body>
+</html>
