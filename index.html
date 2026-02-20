@@ -12,6 +12,67 @@
       background: #f9f9f9;
       color: #111;
     }
+
+    .hero {
+  background-color: #0a0a0a;
+  color: white;
+  padding: 60px 20px;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.hero-image img {
+  width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.hero-content {
+  max-width: 500px;
+}
+
+.hero-content h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.hero-content h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #b3b3b3;
+}
+
+.hero-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background-color: #1e40af;
+}
     .certificados {
   display: flex;
   flex-wrap: wrap;
@@ -105,23 +166,41 @@
       background: #111;
       color: #fff;
     }
+    
   </style>
 </head>
 
 <body>
 
 <header>
-  <h1>Danielli Arçari</h1>
-  <h2>Data Analyst em formação | SQL | Python | Análise de Dados</h2>
-  <p>Transição de carreira com foco em análise de dados orientada à tomada de decisão.</p>
+  <section class="hero">
+  <div class="hero-container">
 
-  <div class="buttons">
-    <a href="#projetos">Ver Projetos</a>
-    <a href="https://www.linkedin.com/in/danielli-arcari/" target="_blank">LinkedIn</a>
-    <a href="https://github.com/danielli-arcari" target="_blank">GitHub</a>
+    <div class="hero-image">
+      <img src="foto_dani_portfolio_final.png" alt="Danielli Arcari">
+    </div>
+
+    <div class="hero-content">
+      <h1>Danielli Arçari</h1>
+
+      <h2>
+        Data Analyst em formação | SQL | Python | Análise de Dados
+      </h2>
+
+      <p>
+        Experiência em análise de dados com Python e SQL aplicada à tomada de decisão.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projetos" class="btn">Ver Projetos</a>
+        <a href="SEU_LINK_LINKEDIN" class="btn">LinkedIn</a>
+        <a href="SEU_LINK_GITHUB" class="btn">GitHub</a>
+      </div>
+    </div>
   </div>
+</section>
+ 
 </header>
-
 <section>
   <h2>Sobre</h2>
   <p>
