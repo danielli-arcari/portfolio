@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Danielli Arçari | Data Analyst</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <style>
     body {
       margin: 0;
@@ -13,112 +13,69 @@
       color: #111;
     }
 
+    /* HERO */
     .hero {
-  background-color: #0a0a0a;
-  color: white;
-  padding: 60px 20px;
-}
-
-.hero-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
-
-.hero-image img {
-  width: 260px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-
-.hero-content {
-  max-width: 500px;
-}
-
-.hero-content h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-.hero-content h2 {
-  font-size: 20px;
-  margin-bottom: 15px;
-  color: #b3b3b3;
-}
-
-.hero-content p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  background-color: #2563eb;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.btn:hover {
-  background-color: #1e40af;
-}
-    .certificados {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.btn-cert {
-  padding: 10px 15px;
-  background: #2563eb;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.btn-cert:hover {
-  background: #1e40af;
-}
-
-    header {
-      background: #111;
-      color: #fff;
+      background-color: #0a0a0a;
+      color: white;
       padding: 60px 20px;
-      text-align: center;
     }
 
-    header h1 {
-      margin-bottom: 10px;
+    .hero-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .hero-image img {
+      width: 260px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .hero-content {
+      max-width: 500px;
+    }
+
+    .hero-content h1 {
       font-size: 32px;
+      margin-bottom: 10px;
     }
 
-    header p {
-      color: #bbb;
-      max-width: 600px;
-      margin: 10px auto;
+    .hero-content h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #b3b3b3;
     }
 
-    .buttons a {
-      margin: 10px;
-      padding: 10px 20px;
-      background: #2563eb;
-      color: #fff;
+    .hero-content p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background-color: #2563eb;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
       text-decoration: none;
-      border-radius: 5px;
+      font-size: 14px;
     }
 
+    .btn:hover {
+      background-color: #1e40af;
+    }
+
+    /* SEÇÕES */
     section {
       padding: 50px 20px;
       max-width: 1000px;
@@ -131,10 +88,7 @@
       padding-left: 10px;
     }
 
-    .insights li {
-      margin-bottom: 10px;
-    }
-
+    /* PROJETOS */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -160,31 +114,51 @@
       text-decoration: none;
     }
 
+    /* CERTIFICADOS */
+    .certificados {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-cert {
+      padding: 10px 15px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .btn-cert:hover {
+      background: #1e40af;
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 20px;
       background: #111;
       color: #fff;
     }
-    
   </style>
 </head>
 
 <body>
 
-<header>
-  <section class="hero">
+<!-- HERO -->
+<section class="hero">
   <div class="hero-container">
 
     <div class="hero-image">
-      <img src="foto_dani_portfolio_final.png" alt="Danielli Arcari">
+      <img src="foto_dani_portfolio_final.png" alt="Danielli Arçari">
     </div>
 
     <div class="hero-content">
       <h1>Danielli Arçari</h1>
 
       <h2>
-        Data Analyst em formação | SQL | Python | Análise de Dados
+        Data Analyst | SQL | Python | Análise de Dados
       </h2>
 
       <p>
@@ -193,36 +167,39 @@
 
       <div class="hero-buttons">
         <a href="#projetos" class="btn">Ver Projetos</a>
-        <a href="SEU_LINK_LINKEDIN" class="btn">LinkedIn</a>
-        <a href="SEU_LINK_GITHUB" class="btn">GitHub</a>
+        <a href="https://www.linkedin.com/in/danielli-arcari/" target="_blank" class="btn">LinkedIn</a>
+        <a href="https://github.com/danielli-arcari" target="_blank" class="btn">GitHub</a>
       </div>
     </div>
+
   </div>
 </section>
- 
-</header>
+
+<!-- SOBRE -->
 <section>
   <h2>Sobre</h2>
   <p>
-    Profissional com 16 anos de experiência na área jurídica, atualmente cursando Ciência da Computação e em transição de carreira para Data Analytics.
+    Profissional com 16 anos de experiência na área jurídica, atualmente cursando Ciência da Computação e atuando com análise de dados.
     Ao longo da minha trajetória, desenvolvi capacidade analítica, pensamento crítico e tomada de decisão baseada em evidências.
   </p>
 
   <p>
-    Hoje aplico essas habilidades na análise de dados, utilizando Python, SQL e ferramentas de visualização para transformar dados em insights acionáveis.
-    Meu foco é apoiar decisões estratégicas com base em dados reais, identificando padrões, inconsistências e oportunidades de melhoria.
+    Hoje aplico essas habilidades utilizando Python, SQL e visualização de dados para transformar dados em insights acionáveis.
+    Meu foco é apoiar decisões estratégicas, identificando padrões, inconsistências e oportunidades de melhoria.
   </p>
 </section>
 
+<!-- INSIGHTS -->
 <section>
   <h2>Principais Insights</h2>
-  <ul class="insights">
+  <ul>
     <li>Correlação fraca (0,24) entre população e emissões de CO₂, indicando maior influência de fatores econômicos</li>
-    <li>Identificação da loja com menor desempenho para decisão estratégica de venda</li>
-    <li>Predominância de baixa escolaridade (67%) no sistema prisional, indicando padrão estrutural consistente</li>
+    <li>Identificação da loja com menor desempenho para decisão estratégica</li>
+    <li>67% da população prisional com baixa escolaridade, indicando padrão estrutural</li>
   </ul>
 </section>
 
+<!-- PROJETOS -->
 <section id="projetos">
   <h2>Projetos</h2>
 
@@ -231,7 +208,7 @@
     <div class="card">
       <h3>Desempenho de Lojas</h3>
       <p><strong>Problema:</strong> Identificar loja com pior desempenho.</p>
-      <p><strong>Insight:</strong> Loja 4 apresenta menor faturamento e ticket médio.</p>
+      <p><strong>Insight:</strong> Loja 4 com menor faturamento.</p>
       <p><strong>Tecnologias:</strong> Python, Pandas, Matplotlib</p>
       <a href="https://colab.research.google.com/drive/1p_M7tZJjJad6VLuOshbRZ9mlx0wmhxNV" target="_blank">Ver Análise</a>
       <a href="https://github.com/danielli-arcari/Alura_Store" target="_blank">GitHub</a>
@@ -240,7 +217,7 @@
     <div class="card">
       <h3>Emissões no Brasil</h3>
       <p><strong>Problema:</strong> Entender fatores das emissões.</p>
-      <p><strong>Insight:</strong> Baixa correlação entre população e emissão.</p>
+      <p><strong>Insight:</strong> Baixa correlação com população.</p>
       <p><strong>Tecnologias:</strong> Python, Pandas, Plotly</p>
       <a href="https://colab.research.google.com/drive/1YBaPAhDFxXgqzrln16BEvDN3bMzYvaTr" target="_blank">Ver Análise</a>
       <a href="https://github.com/danielli-arcari/analise_gases_efeitoestufa" target="_blank">GitHub</a>
@@ -248,68 +225,37 @@
 
     <div class="card">
       <h3>População Prisional MG</h3>
-      <p><strong>Problema:</strong> Identificar padrões demográficos.</p>
+      <p><strong>Problema:</strong> Identificar padrões.</p>
       <p><strong>Insight:</strong> 67% com baixa escolaridade.</p>
       <p><strong>Tecnologias:</strong> Python, Pandas</p>
       <a href="https://colab.research.google.com/drive/1ESr8ZIiVcNlW785A_7c3kQjfPLPLXbCu" target="_blank">Ver Análise</a>
       <a href="https://github.com/danielli-arcari/analisededados_populacaoprisionalMG_2017a2024" target="_blank">GitHub</a>
     </div>
 
-    <div class="card">
-      <h3>Banco de Dados com SQLAlchemy</h3>
-      <p><strong>Problema:</strong> Simular banco relacional.</p>
-      <p><strong>Insight:</strong> Domínio inicial de modelagem de dados.</p>
-      <p><strong>Tecnologias:</strong> Python, SQLAlchemy, SQLite</p>
-      <a href="https://colab.research.google.com/drive/11rNKtMQ2Mb6GTxKYf4jkxI3C56tacr36" target="_blank">Ver Análise</a>
-      <a href="https://github.com/danielli-arcari/InstituicaoFinanceira_com_SQLAlchemy" target="_blank">GitHub</a>
-    </div>
-
   </div>
 </section>
 
+<!-- CERTIFICADOS -->
 <section>
- <section>
   <h2>Certificados</h2>
 
   <div class="certificados">
-
-    <a href="https://coursera.org/verify/professional-cert/06KQJVUUG0VA" target="_blank" class="btn-cert">
-      Google IT Support (Coursera)
-    </a>
-
-    <a href="https://cursos.alura.com.br/user/danielliarcari/course/fundamentos-de-python-e-dados-grupo-one/certificate" target="_blank" class="btn-cert">
-      Fundamentos de Python e Dados (Alura ONE)
-    </a>
-
-    <a href="https://cursos.alura.com.br/user/danielliarcari/course/logica-de-programacao-grupo-one/certificate" target="_blank" class="btn-cert">
-      Iniciante em Programação (Alura ONE)
-    </a>
-
-    <a href="https://cursos.alura.com.br/user/danielliarcari/course/formacao-desenvolvimento-pessoal-g9-one/certificate" target="_blank" class="btn-cert">
-      Desenvolvimento Pessoal (Alura ONE)
-    </a>
-
-    <a href="https://ada.tech/certificado?code=a0847fcf-98c4-a714-856b-1c849ae6be6c" target="_blank" class="btn-cert">
-      Análise Exploratória de Dados (ADA)
-    </a>
-
-    <a href="https://ada.tech/certificado?code=382de6c1-19c2-8aef-165e-37b2491f6e21" target="_blank" class="btn-cert">
-      Elas+ Tech Data Analytics (ADA)
-    </a>
-
+    <a href="https://coursera.org/verify/professional-cert/06KQJVUUG0VA" target="_blank" class="btn-cert">Google IT Support</a>
+    <a href="https://ada.tech/certificado?code=a0847fcf-98c4-a714-856b-1c849ae6be6c" target="_blank" class="btn-cert">EDA - ADA</a>
+    <a href="https://ada.tech/certificado?code=382de6c1-19c2-8aef-165e-37b2491f6e21" target="_blank" class="btn-cert">Elas+ Tech</a>
   </div>
 </section>
 
-</section>
-
+<!-- FORMAÇÃO -->
 <section>
   <h2>Formação</h2>
   <ul>
     <li>Bacharelado em Direito</li>
-    <li>Graduação em Ciência da Computação (em andamento)</li>
+    <li>Ciência da Computação (em andamento)</li>
   </ul>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <p>Conecte-se comigo</p>
   <p>
