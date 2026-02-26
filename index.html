@@ -2,305 +2,329 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Danielli Arçari | Data Analyst</title>
+  <title>Danielli Arçari | Data Analyst Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #111;
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --bg-body: #f3f4f6;
+      --bg-card: #ffffff;
     }
 
-    /* HERO */
-    .hero {
-  background: 
-    linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5)),
-    url('banner-dados.png');
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
 
-  background-size: cover;
-  background-position: center;
-  color: white;
-  padding: 60px 20px;
-}
-    
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 58, 138, 0.8)),
+                  url('banner-dados.png');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 20px;
+      text-align: left;
+    }
 
     .hero-container {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 40px;
+      gap: 50px;
       max-width: 1100px;
       margin: 0 auto;
       flex-wrap: wrap;
     }
 
     .hero-image img {
-      width: 260px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 50%; /* Foto circular dá um toque mais pessoal de blog */
+      border: 4px solid rgba(255,255,255,0.2);
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3);
     }
 
     .hero-content {
-      max-width: 500px;
+      flex: 1;
+      min-width: 300px;
     }
 
     .hero-content h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
+      font-size: 3rem;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: -1px;
     }
 
     .hero-content h2 {
-      font-size: 20px;
-      margin-bottom: 15px;
-      color: #b3b3b3;
-    }
-
-    .hero-content p {
-      font-size: 16px;
-      margin-bottom: 20px;
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: #bfdbfe;
+      margin-top: 5px;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 25px;
     }
 
     .btn {
-      background-color: #2563eb;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 6px;
+      padding: 12px 24px;
+      border-radius: 8px;
       text-decoration: none;
-      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
     }
 
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-outline { border: 1px solid white; color: white; }
+    
     .btn:hover {
-      background-color: #1e40af;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
-    /* SEÇÕES */
+    /* SEÇÕES ESTILO BLOG */
     section {
-      padding: 50px 20px;
-      max-width: 1000px;
+      padding: 80px 20px;
+      max-width: 900px; /* Mais estreito para facilitar a leitura */
       margin: auto;
     }
 
     h2 {
-      margin-bottom: 20px;
-      border-left: 4px solid #2563eb;
-      padding-left: 10px;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      position: relative;
+      color: var(--text-main);
     }
 
-    /* PROJETOS */
-    .projects {
+    h2::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 4px;
+      background: var(--primary);
+      margin-top: 8px;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      color: #374151;
+    }
+
+    /* PROJETOS - GRID */
+    .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
     }
 
     .card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background: var(--bg-card);
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
     .card h3 {
       margin-top: 0;
+      color: var(--primary);
+      font-size: 1.4rem;
     }
 
-    .card a {
-      display: inline-block;
-      margin-top: 10px;
-      margin-right: 10px;
-      color: #2563eb;
+    .card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin: 10px 0;
+    }
+
+    .card-links {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .card-links a {
+      color: var(--primary);
       text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    /* TAGS DE TECNOLOGIA */
+    .tech-tag {
+      display: inline-block;
+      background: #eff6ff;
+      color: #3b82f6;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-top: 10px;
+      text-transform: uppercase;
     }
 
     /* CERTIFICADOS */
-    .certificados {
+    .cert-list {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    .btn-cert {
-      padding: 10px 15px;
-      background: #2563eb;
-      color: white;
+    .cert-item {
+      background: white;
+      padding: 15px 20px;
+      border-radius: 8px;
       text-decoration: none;
-      border-radius: 5px;
-      font-size: 14px;
+      color: var(--text-main);
+      border-left: 4px solid var(--primary);
+      transition: background 0.2s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .btn-cert:hover {
-      background: #1e40af;
-    }
+    .cert-item:hover { background: #f9fafb; }
 
     /* FOOTER */
     footer {
       text-align: center;
-      padding: 20px;
-      background: #111;
-      color: #fff;
+      padding: 50px 20px;
+      background: #0f172a;
+      color: #94a3b8;
+    }
+
+    footer a { color: white; text-decoration: none; margin: 0 10px; }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 600px) {
+      .hero-content h1 { font-size: 2.2rem; }
+      .hero-container { text-align: center; }
+      .hero-buttons { justify-content: center; }
     }
   </style>
 </head>
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-container">
-
     <div class="hero-image">
       <img src="foto_dani_portfolio_final.png" alt="Danielli Arçari">
     </div>
 
     <div class="hero-content">
       <h1>Danielli Arçari</h1>
-
-      <h2>
-        Data Analyst | SQL | Python | Análise de Dados
-      </h2>
-
-      <p>
-       Análise de dados com Python e SQL para gerar insights e apoiar decisões estratégicas.
-      </p>
-
+      <h2>Cientista de Dados em Formação | Python | SQL | Java</h2>
+      
       <div class="hero-buttons">
-        <a href="#projetos" class="btn">Ver Projetos</a>
-        <a href="https://www.linkedin.com/in/danielli-arcari/" target="_blank" class="btn">LinkedIn</a>
-        <a href="https://github.com/danielli-arcari" target="_blank" class="btn">GitHub</a>
+        <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+        <a href="https://www.linkedin.com/in/danielli-arcari/" target="_blank" class="btn btn-outline">LinkedIn</a>
+        <a href="https://github.com/danielli-arcari" target="_blank" class="btn btn-outline">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre" class="about-text">
+  <h2>Sobre Mim</h2>
+  <p>Olá! Sou <strong>Danielli Arçari</strong>, graduanda em Ciência da Computação pela Uninter. Aos 42 anos, decidi canalizar minha experiência e curiosidade para o universo dos dados e do desenvolvimento de software.</p>
+  
+  <p>Atualmente, foco meus estudos em duas frentes que se complementam: a <strong>Ciência de Dados</strong>, transformando números em decisões estratégicas, e o <strong>Desenvolvimento Backend com Java</strong>, construindo sistemas robustos.</p>
+
+  <p><em>"Nunca é tarde para ser quem você poderia ter sido."</em> Sou a prova de que a tecnologia é um campo fértil para quem tem sede de aprender e resiliência para inovar.</p>
+</section>
+
+<section id="projetos">
+  <h2>Projetos em Destaque</h2>
+
+  <div class="projects-grid">
+    
+    <div class="card">
+      <span class="tech-tag">Python & Pandas</span>
+      <h3>Churn: Evasão de Clientes</h3>
+      <p>Análise de fatores que levam à evasão na TelecomX. Identifiquei padrões em contratos mensais que guiam ações de retenção.</p>
+      <div class="card-links">
+        <a href="https://github.com/danielli-arcari/Analise_evasao_TelecomX" target="_blank">GitHub</a>
+        <a href="https://gamma.app/docs/Analise-de-Evasao-de-Clientes--jing6hxmkoou32u?mode=present#card-p090p796oguf0ti" target="_blank">Relatório</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="tech-tag">Análise Comercial</span>
+      <h3>Desempenho de Lojas</h3>
+      <p>Identificação de unidades com baixo faturamento e ticket médio para revisão operacional estratégica.</p>
+      <div class="card-links">
+        <a href="https://github.com/danielli-arcari/Alura_Store" target="_blank">GitHub</a>
+        <a href="https://colab.research.google.com/drive/1p_M7tZJjJad6VLuOshbRZ9mlx0wmhxNV" target="_blank">Colab</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="tech-tag">Data Science & Meio Ambiente</span>
+      <h3>Emissões no Brasil</h3>
+      <p>Exploração de dados de CO₂ correlacionando fatores econômicos e industriais em vez de apenas demográficos.</p>
+      <div class="card-links">
+        <a href="https://github.com/danielli-arcari/analise_gases_efeitoestufa" target="_blank">GitHub</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="tech-tag">SQL & SQLAlchemy</span>
+      <h3>Modelagem Financeira</h3>
+      <p>Simulação de estrutura de banco de dados relacional para gerenciamento de clientes e transações bancárias.</p>
+      <div class="card-links">
+        <a href="https://github.com/danielli-arcari/InstituicaoFinanceira_com_SQLAlchemy" target="_blank">GitHub</a>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- SOBRE -->
-    <section>
-      <h2>Sobre</h2>
-      <p>  Olá! Sou Danielli Arcari, graduanda em Ciência da Computação pela Uninter e uma entusiasta da tecnologia em constante evolução. \
-        Aos 42 anos, decidi canalizar minha experiência e curiosidade para o universo dos dados e do desenvolvimento de software, provando \
-        que a transição de carreira é uma jornada de coragem e aprendizado contínuo. Atualmente, foco meus estudos em duas frentes que se \
-        complementam: a Ciência de Dados, transformando números em decisões estratégicas, e o Desenvolvimento Backend com Java, construindo\
-        sistemas robustos e eficientes.</p>
-
- <p><strong>Minha Jornada Atual:</strong> </p>
-
- <p><strong>Formação Acadêmica:</strong> Cursando Bacharelado em Ciência da Computação (Uninter).</p>
-
- <p><strong>Especializações:</strong> Participo ativamente de programas de elite como Ada Tech (Elas+Tech), Oracle Next Education (ONE) e \
- trilhas de capacitação da Capgemini e Google.</p>
-
- <p><strong>Stack Técnica:</strong> Python (Pandas, NumPy), SQL, Java, e ferramentas de visualização de dados.</p>
-
- <p><strong>O que eu busco:</strong></p>
-      
-          <p> Mais do que apenas escrever código ou gerar gráficos, busco resolver problemas reais. Acredito que minha maturidade profissional me\
-            permite ter uma visão analítica diferenciada, unindo a precisão técnica da Ciência de Dados com a organização necessária para dados.</p>
-            
-          <p>"Nunca é tarde para ser quem você poderia ter sido." Sou a prova de que a tecnologia é um campo fértil para quem tem sede de aprender \
-            e resiliência para inovar.</p>
-   
-      </p>
-    </section>
-
-<!-- PROJETOS -->
-<section id="projetos">
-  <h2>Projetos</h2>
-
-  <div class="projects">
-    
-     <div class="card">
-        <h3>Análise de Evasão de Clientes da TelecomX (Churn)</h3>
-        <p><strong>Problema:</strong> Identificar os principais fatores que levam à evasão de clientes em uma empresa de telecom, visando reduzir perdas de receita.</p>
-        <p><strong>Análise:</strong> Tratamento, limpeza e análise exploratória de dados, identificando padrões de comportamento associados ao churn.</p>
-        <p><strong>Resultado:</strong> Identificação de maior evasão entre clientes com contrato mensal, menor tempo de permanência e maior valor de cobrança, permitindo direcionamento de ações de retenção.</p>
-        <p><strong>Impacto de negócio:</strong> Possibilita priorizar clientes com maior risco de evasão e orientar estratégias de retenção focadas em contratos mensais.</p>
-        <p><strong>Tecnologias:</strong> Python, Pandas, Matplotlib</p> 
-        <a href="https://github.com/danielli-arcari/Analise_evasao_TelecomX/blob/main/An%C3%A1lise_Evas%C3%A3o_TelecomX_FINAL.ipynb" target="_blank">Ver Análise</a>
-        <a href="https://gamma.app/docs/Analise-de-Evasao-de-Clientes--jing6hxmkoou32u?mode=present#card-p090p796oguf0ti" target="_blank">Relatório</a>
-        <a href="https://github.com/danielli-arcari/Analise_evasao_TelecomX" target="_blank">GitHub</a>
-      </div>
-    
-      <div class="card">
-        <h3>Desempenho de Lojas</h3>
-        <p><strong>Problema:</strong> Identificar a loja com pior desempenho para apoiar decisão estratégica.</p>
-        <p><strong>Análise:</strong> Tratamento e análise de dados de vendas utilizando Python e Pandas.</p>
-        <p><strong>Resultado:</strong> Identificação da Loja 4 como a de menor faturamento e ticket médio, indicando necessidade de revisão operacional.</p>
-        <p><strong>Tecnologias:</strong> Python, Pandas, Matplotlib</p>
-        <a href="https://colab.research.google.com/drive/1p_M7tZJjJad6VLuOshbRZ9mlx0wmhxNV" target="_blank">Ver Análise</a>
-        <a href="https://github.com/danielli-arcari/Alura_Store" target="_blank">GitHub</a>
-      </div>
-
-      <div class="card">
-        <h3>Emissões no Brasil</h3>
-        <p><strong>Problema:</strong> Analisar os fatores relacionados às emissões de CO₂ no Brasil. </p>
-        <p><strong>Análise:</strong> Exploração de dados utilizando Python, Pandas e Plotly, com foco na relação entre variáveis demográficas e ambientais.</p>
-        <p><strong>Resultado:</strong> Identificação de baixa correlação entre população e emissões, indicando maior influência de fatores econômicos e industriais.</p>
-        <p><strong>Tecnologias:</strong> Python, Pandas, Plotly </p>
-        <a href="https://colab.research.google.com/drive/1YBaPAhDFxXgqzrln16BEvDN3bMzYvaTr" target="_blank">Ver Análise</a>
-        <a href="https://github.com/danielli-arcari/analise_gases_efeitoestufa" target="_blank">GitHub</a>
-      </div>
-
-      <div class="card">
-        <h3>População Carcerária do Estado de Minas Gerais (anos de 2017 a 2024)</h3>
-        <p><strong>Problema:</strong> Identificar padrões demográficos na população prisional de Minas Gerais. </p>
-        <p><strong>Análise:</strong> Análise exploratória de dados com Python e Pandas, avaliando variáveis como escolaridade e perfil populacional.</p>
-        <p><strong>Resultado:</strong> Identificação de que 67% da população possui baixa escolaridade, evidenciando um padrão estrutural relevante para políticas públicas.</p>
-        <p><strong>Tecnologias:</strong> Python, Pandas </p>
-        <a href="https://colab.research.google.com/drive/1ESr8ZIiVcNlW785A_7c3kQjfPLPLXbCu" target="_blank">Ver Análise</a>
-        <a href="https://github.com/danielli-arcari/analisededados_populacaoprisionalMG_2017a2024" target="_blank">GitHub</a>
-      </div>
-
-      <div class="card">
-        <h3>Modelagem de Banco de Dados Financeiro</h3>
-        <p><strong>Problema:</strong> Simular a estrutura de um banco de dados de uma instituição financeira para organizar e gerenciar informações de clientes e transações.</p>
-        <p><strong>Análise:</strong> Modelagem de dados e criação de banco relacional utilizando Python e SQLAlchemy, com definição de tabelas, relacionamentos, inserção e consulta de dados.</p>
-        <p><strong>Resultado:</strong> Estrutura funcional de banco de dados capaz de armazenar e recuperar informações de forma organizada, demonstrando domínio inicial de modelagem e manipulação de dados.</p>
-        <p><strong>Tecnologias:</strong> Python, SQLAlchemy, SQLite</p>
-        <a href="https://colab.research.google.com/drive/11rNKtMQ2Mb6GTxKYf4jkxI3C56tacr36" target="_blank">Ver Análise</a>
-        <a href="https://github.com/danielli-arcari/InstituicaoFinanceira_com_SQLAlchemy" target="_blank">GitHub</a>
-      </div>
-
+<section>
+  <h2>Certificações</h2>
+  <div class="cert-list">
+    <a href="https://coursera.org/verify/professional-cert/06KQJVUUG0VA" target="_blank" class="cert-item">
+      <span>Certificado Google Carreiras - Suporte de TI</span>
+      <small>Ver →</small>
+    </a>
+    <a href="https://cursos.alura.com.br/degree/certificate/1744e9df-bd17-4e11-883d-9bcdfd310fca?lang" target="_blank" class="cert-item">
+      <span>Fundamentos de Python e Dados (Alura ONE)</span>
+      <small>Ver →</small>
+    </a>
+    <a href="https://ada.tech/certificado?code=382de6c1-19c2-8aef-165e-37b2491f6e21" target="_blank" class="cert-item">
+      <span>Elas+ Tech (Ada Tech)</span>
+      <small>Ver →</small>
+    </a>
   </div>
 </section>
 
-<!-- CERTIFICADOS -->
-<section>
-  <h2>Certificados</h2>
-
-  <div class="certificados">
-    <a href="https://coursera.org/verify/professional-cert/06KQJVUUG0VA" target="_blank" class="btn-cert">Certificado Google Carreiras Suporte de TI</a>
-    <a href="https://cursos.alura.com.br/degree/certificate/1744e9df-bd17-4e11-883d-9bcdfd310fca?lang" target="_blank" class="btn-cert">Fundamentos de Python e Dados (Alura ONE)</a>
-    <a href="https://cursos.alura.com.br/degree/certificate/b386c88e-e7fd-4484-900b-83ebe45af46f?lang" target="_blank" class="btn-cert">Iniciante em Programação (Alura ONE) </a>
-    <a href="https://ada.tech/certificado?code=382de6c1-19c2-8aef-165e-37b2491f6e21" target="_blank" class="btn-cert">Elas+ Tech </a>
-    <a href="https://euprogramo.thinkific.com/certificates/xdjofngipw" target="_blank" class="btn-cert"> IA Generativa (PrograMaria - Eu ProgrAmo)
-</a>
-  </div>
-</section>
-
-<!-- FORMAÇÃO -->
-<section>
-  <h2>Formação</h2>
-  <ul>
-    <li>Bacharelado em Direito</li>
-    <li>Ciência da Computação (em andamento)</li>
-  </ul>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <p>Conecte-se comigo</p>
-  <p>
-    <a href="https://www.linkedin.com/in/danielli-arcari/" style="color:#fff;">LinkedIn</a> |
-    <a href="https://github.com/danielli-arcari" style="color:#fff;">GitHub</a>
-  </p>
+  <p>Vamos conversar sobre dados e tecnologia?</p>
+  <div style="margin-top: 15px;">
+    <a href="https://www.linkedin.com/in/danielli-arcari/">LinkedIn</a>
+    <a href="https://github.com/danielli-arcari">GitHub</a>
+  </div>
+  <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Danielli Arçari</p>
 </footer>
 
 </body>
