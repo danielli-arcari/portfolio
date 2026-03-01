@@ -7,122 +7,227 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body class="bg-gray-50 text-gray-800 font-sans">
 
-  <nav class="p-6 bg-white shadow-sm flex justify-between items-center sticky top-0 z-50">
-    <h1 class="text-xl font-bold text-blue-700">Danielli Arcari</h1>
-    <div class="space-x-6 text-sm font-medium">
-      <a href="#sobre" class="hover:text-blue-600 transition">Sobre</a>
-      <a href="#projetos" class="hover:text-blue-600 transition">Projetos</a>
-      <a href="#formacao" class="hover:text-blue-600 transition">Formação</a>
-    </div>
-  </nav>
+<!-- NAV -->
+<nav class="p-6 bg-white shadow-sm flex justify-between items-center sticky top-0 z-50">
+  <h1 class="text-xl font-bold text-blue-700">Danielli Arcari</h1>
+  <div class="space-x-6 text-sm font-medium">
+    <a href="#sobre" class="hover:text-blue-600">Sobre</a>
+    <a href="#projetos" class="hover:text-blue-600">Projetos</a>
+    <a href="#formacao" class="hover:text-blue-600">Formação</a>
+  </div>
+</nav>
 
-  <header class="py-20 px-6 text-center bg-slate-900 text-white">
-    <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Dados que viram decisão</h2>
-    <p class="text-lg opacity-80 mb-6 max-w-2xl mx-auto">
-      Analista de dados em formação com foco em SQL, Python e análise orientada a negócio.
-    </p>
-    <p class="text-sm opacity-70 mb-8 max-w-xl mx-auto">
-      16 anos resolvendo problemas complexos no Direito. Hoje aplicando análise estruturada para gerar impacto com dados.
-    </p>
-    <div class="flex justify-center gap-4">
-      <a href="https://linkedin.com/in/danielli-arcari" target="_blank" class="bg-blue-600 px-6 py-2 rounded font-bold hover:bg-blue-700 transition">LinkedIn</a>
-      <a href="https://github.com/danielli-arcari" target="_blank" class="border border-white px-6 py-2 rounded font-bold hover:bg-white hover:text-slate-900 transition">GitHub</a>
-    </div>
-  </header>
+<!-- HERO -->
+<header class="py-20 px-6 text-center bg-slate-900 text-white">
+  <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
+    Dados que geram decisão
+  </h2>
 
-  <section id="projetos" class="py-16 max-w-5xl mx-auto px-6">
-    <h3 class="text-3xl font-bold mb-10 border-b-4 border-blue-600 inline-block text-slate-800">Projetos de Dados</h3>
+  <p class="text-lg opacity-80 mb-6 max-w-2xl mx-auto">
+    Analista de dados em formação com foco em SQL, Python e análise orientada a negócio.
+  </p>
 
-    <div class="space-y-12">
+  <p class="text-sm opacity-70 mb-8 max-w-xl mx-auto">
+    16 anos resolvendo problemas complexos no Direito. Hoje aplicando análise estruturada para identificar padrões, gerar insights e apoiar decisões.
+  </p>
 
-      <div class="bg-white p-8 rounded-xl shadow-lg border">
-        <h4 class="text-2xl font-bold text-blue-700 mb-4">Análise de Churn - TelecomX</h4>
-        <p class="text-gray-600 mb-4">Identificação de fatores que influenciam a evasão de clientes e definição de ações de retenção.</p>
-        <ul class="list-disc ml-5 text-gray-600 mb-4">
-          <li>Análise exploratória de dados</li>
-          <li>Segmentação de clientes</li>
-          <li>Identificação de padrões de churn</li>
-        </ul>
-        <p class="text-sm text-gray-500 mb-4">Foco: transformar dados em ações de retenção</p>
-        <a href="https://github.com/danielli-arcari/Analise_evasao_TelecomX" target="_blank" class="text-blue-600 font-bold">Ver projeto →</a>
-      </div>
+  <div class="flex justify-center gap-4">
+    <a href="https://linkedin.com/in/danielli-arcari" target="_blank"
+      class="bg-blue-600 px-6 py-2 rounded font-bold hover:bg-blue-700">
+      LinkedIn
+    </a>
+    <a href="https://github.com/danielli-arcari" target="_blank"
+      class="border border-white px-6 py-2 rounded font-bold hover:bg-white hover:text-slate-900">
+      GitHub
+    </a>
+  </div>
+</header>
 
-      <div class="bg-white p-8 rounded-xl shadow-lg border">
-        <h4 class="text-2xl font-bold text-blue-700 mb-4">Análise de Desempenho - Alura Store</h4>
-        <p class="text-gray-600 mb-4">Análise comparativa de desempenho entre lojas para apoiar decisão estratégica de venda.</p>
-        <ul class="list-disc ml-5 text-gray-600 mb-4">
-          <li>Faturamento, ticket médio e avaliação</li>
-          <li>Análise de eficiência operacional (frete)</li>
-          <li>Recomendação baseada em dados</li>
-        </ul>
-        <p class="text-sm text-gray-500 mb-4">Resultado: identificação da loja com menor desempenho global</p>
-        <a href="https://github.com/danielli-arcari/Alura_Store" target="_blank" class="text-blue-600 font-bold">Ver projeto →</a>
-      </div>
+<!-- PROJETOS -->
+<section id="projetos" class="py-16 max-w-5xl mx-auto px-6">
+  <h3 class="text-3xl font-bold mb-10 border-b-4 border-blue-600 inline-block">
+    Projetos de Dados
+  </h3>
 
-      <div class="bg-white p-8 rounded-xl shadow-lg border">
-        <h4 class="text-2xl font-bold text-blue-700 mb-4">População Prisional - MG</h4>
-        <p class="text-gray-600 mb-4">Análise de dados públicos para identificar padrões de crescimento e distribuição regional.</p>
-        <ul class="list-disc ml-5 text-gray-600 mb-4">
-          <li>Tratamento de dados inconsistentes</li>
-          <li>Análise temporal e geográfica</li>
-          <li>Interpretação baseada em contexto social</li>
-        </ul>
-        <p class="text-sm text-gray-500 mb-4">Foco: análise aplicada a dados reais</p>
-        <a href="https://github.com/danielli-arcari/analisededados_populacaoprisionalMG_2017a2024" target="_blank" class="text-blue-600 font-bold">Ver projeto →</a>
-      </div>
+  <div class="space-y-12">
 
-      <div class="bg-white p-8 rounded-xl shadow-lg border">
-        <h4 class="text-2xl font-bold text-blue-700 mb-4">SQL + SQLAlchemy</h4>
-        <p class="text-gray-600 mb-4">Integração entre Python e banco de dados relacional com consultas analíticas.</p>
-        <ul class="list-disc ml-5 text-gray-600 mb-4">
-          <li>JOIN entre tabelas</li>
-          <li>Agregações e métricas</li>
-          <li>Consultas orientadas a negócio</li>
-        </ul>
-        <p class="text-sm text-gray-500 mb-4">Foco: domínio de SQL aplicado</p>
-        <a href="https://github.com/danielli-arcari" target="_blank" class="text-blue-600 font-bold">Ver projeto →</a>
-      </div>
+    <!-- CHURN -->
+    <div class="bg-white p-8 rounded-xl shadow-lg border">
+      <h4 class="text-2xl font-bold text-blue-700 mb-4">
+        Análise de Churn – TelecomX
+      </h4>
 
-    </div>
-  </section>
-
-  <section id="sobre" class="py-16 bg-white px-6">
-    <div class="max-w-5xl mx-auto">
-      <h3 class="text-3xl font-bold mb-6 text-slate-800">Sobre</h3>
-      <p class="text-lg text-gray-600 leading-relaxed">
-        Profissional em transição para dados com foco em execução e resultado. Trago 16 anos de experiência em análise de problemas complexos no Direito e aplico essa base em SQL, Python e análise de dados orientada a decisão.
+      <p class="text-gray-600 mb-3">
+        <strong>Problema:</strong> alta taxa de cancelamento de clientes.
       </p>
-    </div>
-  </section>
 
-  <section id="formacao" class="py-16 bg-gray-100 px-6">
-    <div class="max-w-5xl mx-auto">
-      <h3 class="text-3xl font-bold mb-10 text-slate-800">Formação</h3>
-      <div class="space-y-4">
-        <div class="bg-white p-5 rounded shadow-sm border-l-4 border-blue-600">
-          <p class="font-bold">Ciência da Computação (em andamento)</p>
-        </div>
-        <div class="bg-white p-5 rounded shadow-sm">
-          <p class="font-bold">Direito</p>
-        </div>
-        <div class="bg-white p-5 rounded shadow-sm">
-          <p class="font-bold">Técnico em Informática</p>
-        </div>
+      <p class="text-gray-600 mb-3">
+        <strong>Análise:</strong> exploração de dados com Python e SQL para identificar fatores críticos de evasão.
+      </p>
+
+      <ul class="list-disc ml-5 text-gray-600 mb-3">
+        <li>Clientes com contrato mensal apresentam maior churn</li>
+        <li>Baixo tempo de permanência aumenta risco de cancelamento</li>
+      </ul>
+
+      <p class="text-gray-600 mb-3">
+        <strong>Recomendação:</strong> incentivar planos de longo prazo e atuar na retenção nos primeiros meses.
+      </p>
+
+      <a href="https://github.com/danielli-arcari/Analise_evasao_TelecomX" target="_blank"
+        class="text-blue-600 font-bold">
+        Ver projeto →
+      </a>
+    </div>
+
+    <!-- ALURA STORE -->
+    <div class="bg-white p-8 rounded-xl shadow-lg border">
+      <h4 class="text-2xl font-bold text-blue-700 mb-4">
+        Análise de Desempenho – Alura Store
+      </h4>
+
+      <p class="text-gray-600 mb-3">
+        <strong>Problema:</strong> identificar lojas com baixo desempenho.
+      </p>
+
+      <p class="text-gray-600 mb-3">
+        <strong>Análise:</strong> comparação de faturamento, ticket médio e custos operacionais.
+      </p>
+
+      <ul class="list-disc ml-5 text-gray-600 mb-3">
+        <li>Identificação da loja com menor faturamento</li>
+        <li>Maior custo de frete impactando margem</li>
+      </ul>
+
+      <p class="text-gray-600 mb-3">
+        <strong>Decisão:</strong> necessidade de revisão logística e estratégia comercial da unidade.
+      </p>
+
+      <a href="https://github.com/danielli-arcari/Alura_Store" target="_blank"
+        class="text-blue-600 font-bold">
+        Ver projeto →
+      </a>
+    </div>
+
+    <!-- PRISIONAL -->
+    <div class="bg-white p-8 rounded-xl shadow-lg border">
+      <h4 class="text-2xl font-bold text-blue-700 mb-4">
+        População Prisional – MG
+      </h4>
+
+      <p class="text-gray-600 mb-3">
+        <strong>Problema:</strong> entender padrões de crescimento e distribuição da população prisional.
+      </p>
+
+      <p class="text-gray-600 mb-3">
+        <strong>Análise:</strong> tratamento de dados públicos e análise temporal/geográfica.
+      </p>
+
+      <ul class="list-disc ml-5 text-gray-600 mb-3">
+        <li>Identificação de crescimento ao longo dos anos</li>
+        <li>Distribuição desigual entre regiões</li>
+      </ul>
+
+      <p class="text-gray-600 mb-3">
+        <strong>Aplicação:</strong> apoio a decisões públicas e alocação de recursos.
+      </p>
+
+      <a href="https://github.com/danielli-arcari/analisededados_populacaoprisionalMG_2017a2024"
+        target="_blank"
+        class="text-blue-600 font-bold">
+        Ver projeto →
+      </a>
+    </div>
+
+    <!-- SQL -->
+    <div class="bg-white p-8 rounded-xl shadow-lg border">
+      <h4 class="text-2xl font-bold text-blue-700 mb-4">
+        SQL aplicado com Python (SQLAlchemy)
+      </h4>
+
+      <p class="text-gray-600 mb-3">
+        <strong>Problema:</strong> extrair métricas de negócio a partir de banco relacional.
+      </p>
+
+      <p class="text-gray-600 mb-3">
+        <strong>Solução:</strong> consultas SQL integradas ao Python.
+      </p>
+
+      <ul class="list-disc ml-5 text-gray-600 mb-3">
+        <li>JOIN entre múltiplas tabelas</li>
+        <li>Agregações e cálculo de métricas</li>
+        <li>Consultas orientadas a análise de negócio</li>
+      </ul>
+
+      <p class="text-gray-600 mb-3">
+        <strong>Resultado:</strong> queries reutilizáveis para análise estruturada.
+      </p>
+
+      <a href="https://github.com/danielli-arcari" target="_blank"
+        class="text-blue-600 font-bold">
+        Ver projeto →
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" class="py-16 bg-white px-6">
+  <div class="max-w-5xl mx-auto">
+    <h3 class="text-3xl font-bold mb-6">Sobre</h3>
+
+    <p class="text-lg text-gray-600 leading-relaxed">
+      Em transição para a área de dados, com foco em resolver problemas reais usando análise estruturada.
+      Trago 16 anos de experiência analisando cenários complexos no Direito, o que fortaleceu minha capacidade de interpretação, argumentação e tomada de decisão baseada em evidências.
+    </p>
+  </div>
+</section>
+
+<!-- FORMAÇÃO -->
+<section id="formacao" class="py-16 bg-gray-100 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h3 class="text-3xl font-bold mb-10">Formação</h3>
+
+    <div class="space-y-4">
+      <div class="bg-white p-5 rounded shadow-sm border-l-4 border-blue-600">
+        <p class="font-bold">Ciência da Computação (em andamento)</p>
+      </div>
+
+      <div class="bg-white p-5 rounded shadow-sm">
+        <p class="font-bold">Direito</p>
+      </div>
+
+      <div class="bg-white p-5 rounded shadow-sm">
+        <p class="font-bold">Técnico em Informática</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="py-12 text-center bg-white border-t">
-    <p class="font-bold">Danielli Arcari</p>
-    <div class="flex justify-center space-x-8 mt-4 text-2xl">
-      <a href="https://linkedin.com/in/danielli-arcari" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/danielli-arcari" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="mailto:axiadmc@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
-    <p class="text-gray-400 text-xs mt-4">Aberta a estágio em dados</p>
-  </footer>
+<!-- FOOTER -->
+<footer class="py-12 text-center bg-white border-t">
+  <p class="font-bold">Danielli Arcari</p>
+
+  <div class="flex justify-center space-x-8 mt-4 text-2xl">
+    <a href="https://linkedin.com/in/danielli-arcari" target="_blank">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/danielli-arcari" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="mailto:axiadmc@gmail.com">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+
+  <p class="text-gray-400 text-xs mt-4">
+    Aberta a estágio em dados
+  </p>
+</footer>
 
 </body>
 </html>
