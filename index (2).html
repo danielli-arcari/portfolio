@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danielli Arcari | Portfólio de Dados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --ink: #0f0e0e;
+      --paper: #f5f2ec;
+      --cream: #ede9e0;
+      --accent: #c8412b;
+      --accent2: #2b5fc8;
+      --muted: #7a7368;
+      --card: #ffffff;
+      --border: #ddd8cf;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      padding: 1.2rem 3rem;
+      background: var(--paper);
+      border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links { display: flex; gap: 2.5rem; }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    header {
+      min-height: 92vh;
+      padding: 6rem 3rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block; width: 2rem; height: 1px;
+      background: var(--accent);
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      max-width: 38ch;
+    }
+
+    .hero-tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      max-width: 40ch;
+      font-style: italic;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--ink);
+      color: #fff;
+      padding: 0.75rem 1.8rem;
+      border-radius: 2px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
+
+    .btn-secondary {
+      border: 1.5px solid var(--border);
+      color: var(--ink);
+      padding: 0.75rem 1.8rem;
+      border-radius: 2px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--ink); transform: translateY(-2px); }
+
+    /* Hero right side — stats */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem;
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-number span { color: var(--accent); }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .stack-pill-group {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+
+    .stack-pill {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      padding: 0.3rem 0.8rem;
+      border-radius: 2px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 6rem 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -0.025em;
+      color: var(--ink);
+      line-height: 1.1;
+    }
+
+    .section-divider {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── PROJECT CARDS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 3px; height: 0;
+      background: var(--accent);
+      transition: height 0.35s ease;
+    }
+    .project-card:hover::before { height: 100%; }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+    }
+
+    .project-card.featured {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .project-card.featured::before { background: var(--accent2); }
+
+    .project-tag {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: -0.4rem;
+    }
+
+    .project-card.featured .project-tag { color: var(--accent2); }
+
+    .project-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .project-findings {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .project-findings li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      color: var(--ink);
+    }
+
+    .project-findings li::before {
+      content: '→';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+
+    .project-card.featured .project-findings li::before { color: var(--accent2); }
+
+    .project-tools {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      margin-top: auto;
+    }
+
+    .tool-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--muted);
+      background: var(--cream);
+      border: 1px solid var(--border);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      margin-top: 0.3rem;
+      transition: gap 0.2s;
+    }
+
+    .project-card.featured .project-link { color: var(--accent2); }
+    .project-link:hover { gap: 0.7rem; }
+
+    /* outcome badge */
+    .outcome-badge {
+      display: inline-block;
+      background: var(--ink);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 2px;
+      align-self: flex-start;
+    }
+    .outcome-badge.blue { background: var(--accent2); }
+
+    /* ── SOBRE ── */
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .sobre-text p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+
+    .sobre-text strong { color: var(--ink); font-weight: 500; }
+
+    .skills-col { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .skill-group-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-bar-group { display: flex; flex-direction: column; gap: 0.7rem; }
+
+    .skill-item {
+      display: flex; align-items: center; gap: 1rem;
+    }
+
+    .skill-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--ink);
+      width: 6rem;
+      flex-shrink: 0;
+    }
+
+    .skill-track {
+      flex: 1;
+      height: 2px;
+      background: var(--border);
+      border-radius: 1px;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 1px;
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: fillBar 1s ease forwards;
+      animation-play-state: paused;
+    }
+
+    .skill-fill.blue { background: var(--accent2); }
+
+    @keyframes fillBar {
+      to { transform: scaleX(1); }
+    }
+
+    /* ── FORMAÇÃO ── */
+    .formacao-list { display: flex; flex-direction: column; gap: 1px; }
+
+    .formacao-item {
+      display: grid;
+      grid-template-columns: 10rem 1fr;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      align-items: start;
+    }
+
+    .formacao-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+      padding-top: 0.2rem;
+    }
+
+    .formacao-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.2rem;
+    }
+
+    .formacao-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .formacao-badge {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.15rem 0.6rem;
+      border-radius: 2px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .footer-tagline {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      color: var(--muted);
+      font-size: 1.2rem;
+      transition: color 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    .footer-links a:hover { color: var(--accent); transform: translateY(-2px); }
+
+    .footer-open {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--accent);
+      padding: 0.4rem 1rem;
+      border-radius: 2px;
+    }
+
+    /* ── FULL-WIDTH DIVIDER ── */
+    .full-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin: 0;
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.2rem; }
+      header { grid-template-columns: 1fr; min-height: auto; padding: 4rem 1.5rem 3rem; gap: 2rem; }
+      .hero-right { display: none; }
+      section { padding: 4rem 1.5rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+      .sobre-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .formacao-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Danielli Arcari</a>
+  <div class="nav-links">
+    <a href="#projetos">Projetos</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#formacao">Formação</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Portfólio de Dados</div>
+    <h1 class="hero-title">
+      Dados que<br>geram <em>decisão.</em>
+    </h1>
+    <p class="hero-desc">
+      Analista de dados em formação — SQL, Python e Machine Learning aplicados a problemas reais de negócio.
+    </p>
+    <p class="hero-tagline">
+      16 anos interpretando cenários complexos no Direito. Hoje, transformando dados em inteligência.
+    </p>
+    <div class="hero-actions">
+      <a href="https://linkedin.com/in/danielli-arcari" target="_blank" class="btn-primary">
+        <i class="fab fa-linkedin"></i>&nbsp; LinkedIn
+      </a>
+      <a href="https://github.com/danielli-arcari" target="_blank" class="btn-secondary">
+        <i class="fab fa-github"></i>&nbsp; GitHub
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-right fade-up">
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-number">5<span>+</span></div>
+        <div class="stat-label">Projetos de Dados</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">16<span>a</span></div>
+        <div class="stat-label">Análise Crítica</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label" style="margin-bottom:0.8rem">Stack Técnica</div>
+      <div class="stack-pill-group">
+        <span class="stack-pill">Python</span>
+        <span class="stack-pill">Pandas</span>
+        <span class="stack-pill">Scikit-learn</span>
+        <span class="stack-pill">SQL</span>
+        <span class="stack-pill">SQLAlchemy</span>
+        <span class="stack-pill">Matplotlib</span>
+        <span class="stack-pill">Seaborn</span>
+        <span class="stack-pill">Jupyter</span>
+        <span class="stack-pill">ML / Regressão</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="full-divider"></div>
+
+<!-- PROJETOS -->
+<section id="projetos">
+  <div class="section-header">
+    <span class="section-label">Portfólio</span>
+    <h2 class="section-title">Projetos de Dados</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- ★ DESTAQUE: ML Preços de Carros -->
+    <div class="project-card featured fade-up">
+      <div>
+        <div class="project-tag">Destaque · Machine Learning</div>
+        <h3 class="project-title">Previsão de Preços de Carros com ML</h3>
+        <p class="project-desc">
+          Modelo preditivo de regressão treinado para estimar o preço de venda de automóveis com base em características técnicas e comerciais. Projeto end-to-end cobrindo análise exploratória, feature engineering, treinamento e avaliação de métricas.
+        </p>
+        <ul class="project-findings">
+          <li>Pipeline completo: EDA → pré-processamento → modelagem → avaliação</li>
+          <li>Encoding de variáveis categóricas e normalização de features numéricas</li>
+          <li>Identificação dos fatores com maior impacto no preço (motorização, combustível, dimensões)</li>
+          <li>Avaliação com métricas R², MAE e RMSE para validar a capacidade preditiva</li>
+          <li>Visualizações de correlação e distribuição para suporte às decisões de feature selection</li>
+        </ul>
+        <span class="outcome-badge blue">Modelo de Regressão Supervisionada</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1.2rem; justify-content:space-between; height:100%;">
+        <div>
+          <div class="skill-group-label" style="margin-bottom:0.8rem">Tecnologias utilizadas</div>
+          <div class="project-tools">
+            <span class="tool-tag">Python</span>
+            <span class="tool-tag">Scikit-learn</span>
+            <span class="tool-tag">Pandas</span>
+            <span class="tool-tag">NumPy</span>
+            <span class="tool-tag">Matplotlib</span>
+            <span class="tool-tag">Seaborn</span>
+            <span class="tool-tag">Jupyter Notebook</span>
+            <span class="tool-tag">Regressão Linear</span>
+            <span class="tool-tag">Feature Engineering</span>
+          </div>
+        </div>
+        <div style="background:var(--cream); border:1px solid var(--border); border-radius:4px; padding:1.2rem;">
+          <div class="skill-group-label" style="margin-bottom:0.5rem">O que este projeto demonstra</div>
+          <p style="font-size:0.85rem; color:var(--muted); line-height:1.6;">
+            Capacidade de conduzir um projeto de ML do zero — desde a exploração dos dados brutos até a entrega de um modelo avaliado e interpretável, com visão orientada a negócio.
+          </p>
+        </div>
+        <a href="https://github.com/danielli-arcari/treinamento4_machinelearning_previsaodepre-osdevenda" target="_blank" class="project-link">
+          Ver no GitHub <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- CHURN -->
+    <div class="project-card fade-up">
+      <div class="project-tag">Análise de Negócio</div>
+      <h3 class="project-title">Análise de Churn — TelecomX</h3>
+      <p class="project-desc">
+        Investigação da alta taxa de cancelamento de clientes em empresa de telecomunicações. Análise com Python e SQL para mapear perfis de risco e propor ações de retenção.
+      </p>
+      <ul class="project-findings">
+        <li>Contratos mensais concentram o maior volume de churn</li>
+        <li>Clientes com baixo tempo de permanência têm risco elevado de cancelamento</li>
+        <li>Recomendação: programas de fidelização nos primeiros 90 dias</li>
+      </ul>
+      <div class="project-tools">
+        <span class="tool-tag">Python</span>
+        <span class="tool-tag">Pandas</span>
+        <span class="tool-tag">SQL</span>
+        <span class="tool-tag">Seaborn</span>
+      </div>
+      <span class="outcome-badge">Redução de Churn</span>
+      <a href="https://github.com/danielli-arcari/Analise_evasao_TelecomX" target="_blank" class="project-link">
+        Ver no GitHub <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <!-- ALURA STORE -->
+    <div class="project-card fade-up">
+      <div class="project-tag">Desempenho Comercial</div>
+      <h3 class="project-title">Análise de Desempenho — Alura Store</h3>
+      <p class="project-desc">
+        Diagnóstico de quatro unidades de varejo para identificar qual loja apresentava menor rentabilidade e necessitava de revisão estratégica.
+      </p>
+      <ul class="project-findings">
+        <li>Ranqueamento de lojas por faturamento e ticket médio</li>
+        <li>Custo de frete elevado impactando margem operacional</li>
+        <li>Decisão orientada por dados: revisão logística e reposicionamento comercial</li>
+      </ul>
+      <div class="project-tools">
+        <span class="tool-tag">Python</span>
+        <span class="tool-tag">Pandas</span>
+        <span class="tool-tag">Matplotlib</span>
+      </div>
+      <span class="outcome-badge">Decisão Estratégica</span>
+      <a href="https://github.com/danielli-arcari/Alura_Store" target="_blank" class="project-link">
+        Ver no GitHub <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <!-- PRISIONAL -->
+    <div class="project-card fade-up">
+      <div class="project-tag">Dados Públicos · Impacto Social</div>
+      <h3 class="project-title">População Prisional — Minas Gerais</h3>
+      <p class="project-desc">
+        Tratamento e análise de dados públicos do sistema prisional mineiro entre 2017 e 2024. Foco em tendências temporais e distribuição geográfica para apoio a políticas públicas.
+      </p>
+      <ul class="project-findings">
+        <li>Crescimento contínuo da população prisional ao longo dos anos</li>
+        <li>Distribuição desigual entre regiões do estado</li>
+        <li>Análise aplicável a decisões de alocação de recursos públicos</li>
+      </ul>
+      <div class="project-tools">
+        <span class="tool-tag">Python</span>
+        <span class="tool-tag">Pandas</span>
+        <span class="tool-tag">Seaborn</span>
+        <span class="tool-tag">Dados Públicos</span>
+      </div>
+      <span class="outcome-badge">Análise de Impacto</span>
+      <a href="https://github.com/danielli-arcari/analisededados_populacaoprisionalMG_2017a2024" target="_blank" class="project-link">
+        Ver no GitHub <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <!-- SQL -->
+    <div class="project-card fade-up" style="grid-column: span 2;">
+      <div class="project-tag">Engenharia de Dados</div>
+      <h3 class="project-title">SQL Aplicado com Python & SQLAlchemy</h3>
+      <p class="project-desc" style="max-width:60ch;">
+        Integração entre banco de dados relacional e Python para extração de métricas de negócio. Demonstração de proficiência em consultas complexas e análise estruturada orientada a resultados.
+      </p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.3rem;">
+        <ul class="project-findings">
+          <li>JOINs entre múltiplas tabelas para cruzamento de dados</li>
+          <li>Agregações e métricas de negócio com GROUP BY e HAVING</li>
+        </ul>
+        <ul class="project-findings">
+          <li>Consultas reutilizáveis e documentadas</li>
+          <li>Integração fluida SQL + Python para análise automatizada</li>
+        </ul>
+      </div>
+      <div class="project-tools" style="margin-top:0.5rem;">
+        <span class="tool-tag">SQL</span>
+        <span class="tool-tag">Python</span>
+        <span class="tool-tag">SQLAlchemy</span>
+        <span class="tool-tag">PostgreSQL</span>
+        <span class="tool-tag">Pandas</span>
+      </div>
+      <a href="https://github.com/danielli-arcari" target="_blank" class="project-link">
+        Ver no GitHub <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="section-header">
+    <span class="section-label">Perfil</span>
+    <h2 class="section-title">Sobre</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="sobre-grid">
+    <div class="sobre-text">
+      <p>
+        Em transição para a área de dados — com intenção, método e portfólio. Trago <strong>16 anos de experiência no Direito</strong>, onde analisar cenários complexos, identificar padrões e construir argumentação baseada em evidências era o trabalho diário.
+      </p>
+      <p>
+        Hoje aplico essa mesma mentalidade à análise de dados: entender o problema antes de abrir o notebook, questionar os dados antes de confiar neles, e comunicar resultados de forma que gerem decisão — não apenas relatórios.
+      </p>
+      <p>
+        Estudo <strong>Ciência da Computação</strong> formalmente e construo um portfólio com projetos reais em SQL, Python e Machine Learning. Aberta a estágio ou posição júnior em times de dados onde posso crescer rapidamente e gerar valor.
+      </p>
+    </div>
+
+    <div class="skills-col">
+      <div>
+        <div class="skill-group-label">Análise & Manipulação de Dados</div>
+        <div class="skill-bar-group">
+          <div class="skill-item">
+            <span class="skill-name">Python</span>
+            <div class="skill-track"><div class="skill-fill" style="width:85%; animation-delay:0.1s"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Pandas</span>
+            <div class="skill-track"><div class="skill-fill" style="width:80%; animation-delay:0.2s"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">SQL</span>
+            <div class="skill-track"><div class="skill-fill" style="width:78%; animation-delay:0.3s"></div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="skill-group-label">Machine Learning & Visualização</div>
+        <div class="skill-bar-group">
+          <div class="skill-item">
+            <span class="skill-name">Sklearn</span>
+            <div class="skill-track"><div class="skill-fill blue" style="width:70%; animation-delay:0.4s"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Seaborn</span>
+            <div class="skill-track"><div class="skill-fill blue" style="width:75%; animation-delay:0.5s"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Matplotlib</span>
+            <div class="skill-track"><div class="skill-fill blue" style="width:72%; animation-delay:0.6s"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- FORMAÇÃO -->
+<section id="formacao">
+  <div class="section-header">
+    <span class="section-label">Trajetória</span>
+    <h2 class="section-title">Formação</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="formacao-list">
+    <div class="formacao-item fade-up">
+      <div class="formacao-year">Em andamento</div>
+      <div>
+        <div class="formacao-title">Ciência da Computação</div>
+        <div class="formacao-sub">Graduação — base formal em algoritmos, estrutura de dados e fundamentos de IA</div>
+        <span class="formacao-badge">Em andamento</span>
+      </div>
+    </div>
+
+    <div class="formacao-item fade-up">
+      <div class="formacao-year">Continuado</div>
+      <div>
+        <div class="formacao-title">Machine Learning & Análise de Dados</div>
+        <div class="formacao-sub">Formação prática — projetos em Python, SQL, Scikit-learn e visualização de dados</div>
+        <span class="formacao-badge">Portfólio ativo</span>
+      </div>
+    </div>
+
+    <div class="formacao-item fade-up">
+      <div class="formacao-year">16 anos</div>
+      <div>
+        <div class="formacao-title">Direito</div>
+        <div class="formacao-sub">Graduação + atuação profissional — análise de cenários complexos, argumentação e tomada de decisão baseada em evidências</div>
+      </div>
+    </div>
+
+    <div class="formacao-item fade-up">
+      <div class="formacao-year">Base técnica</div>
+      <div>
+        <div class="formacao-title">Técnico em Informática</div>
+        <div class="formacao-sub">Fundamentos de programação, hardware e lógica computacional</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-name">Danielli Arcari</div>
+    <div class="footer-tagline">Analista de Dados · Transição de Carreira</div>
+  </div>
+
+  <div class="footer-links">
+    <a href="https://linkedin.com/in/danielli-arcari" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/danielli-arcari" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="mailto:axiadmc@gmail.com" title="E-mail"><i class="fas fa-envelope"></i></a>
+  </div>
+
+  <span class="footer-open">Aberta a oportunidades</span>
+</footer>
+
+<script>
+  // Intersection Observer for fade-up animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+          // trigger skill bars if inside about section
+          const bars = entry.target.querySelectorAll('.skill-fill');
+          bars.forEach(bar => { bar.style.animationPlayState = 'running'; });
+        }, 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Stagger project cards
+  document.querySelectorAll('.project-card.fade-up').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.07}s`;
+  });
+</script>
+
+</body>
+</html>
