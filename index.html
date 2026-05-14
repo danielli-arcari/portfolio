@@ -16,11 +16,11 @@
       --paper: #f5f1e8;
       --cream: #ece6d6;
       --warm: #faf6ed;
-      --accent: #b1593d;        /* terracota queimada — personalidade */
+      --accent: #b1593d;
       --accent-soft: #c97a5c;
-      --accent2: #2c4a52;       /* azul-petróleo profundo — dados */
+      --accent2: #2c4a52;
       --accent2-soft: #486975;
-      --gold: #a47e3b;          /* detalhes / badges */
+      --gold: #a47e3b;
       --muted: #7c7468;
       --muted-soft: #a39b8c;
       --card: #ffffff;
@@ -39,7 +39,6 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
-
     a { color: inherit; }
 
     /* === NAV === */
@@ -83,9 +82,7 @@
       gap: 4.5rem;
       max-width: 1200px;
       margin: 0 auto;
-      position: relative;
     }
-
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 0.6rem;
       font-size: 0.72rem;
@@ -99,7 +96,6 @@
       content: ''; display: block;
       width: 2rem; height: 1px; background: var(--accent);
     }
-
     .hero-title {
       font-family: 'Fraunces', serif;
       font-size: clamp(2.7rem, 5vw, 4.6rem);
@@ -109,12 +105,7 @@
       color: var(--ink);
       margin-bottom: 1.8rem;
     }
-    .hero-title em {
-      font-style: italic;
-      color: var(--accent);
-      font-weight: 400;
-    }
-
+    .hero-title em { font-style: italic; color: var(--accent); font-weight: 400; }
     .hero-desc {
       font-size: 1.08rem;
       color: var(--muted);
@@ -132,9 +123,7 @@
       font-weight: 400;
       line-height: 1.5;
     }
-
     .hero-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; align-items: center; }
-
     .btn-primary, .btn-secondary {
       display: inline-flex; align-items: center; gap: 0.5rem;
       padding: 0.75rem 1.6rem;
@@ -146,18 +135,9 @@
       text-decoration: none;
       transition: all 0.25s ease;
     }
-    .btn-primary {
-      background: var(--ink);
-      color: #fff;
-      border: 1.5px solid var(--ink);
-    }
+    .btn-primary { background: var(--ink); color: #fff; border: 1.5px solid var(--ink); }
     .btn-primary:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
-
-    .btn-secondary {
-      border: 1.5px solid var(--border-strong);
-      color: var(--ink);
-      background: transparent;
-    }
+    .btn-secondary { border: 1.5px solid var(--border-strong); color: var(--ink); background: transparent; }
     .btn-secondary:hover { border-color: var(--ink); transform: translateY(-2px); }
 
     .open-badge {
@@ -183,25 +163,10 @@
       50% { opacity: 0.4; transform: scale(1.5); }
     }
 
-    /* Hero right */
     .hero-right { display: flex; flex-direction: column; gap: 1.3rem; }
-
-    .stat-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    .stat-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 1.4rem 1.5rem;
-    }
-    .stat-card.featured {
-      background: var(--accent2);
-      color: #fff;
-      border: 1px solid var(--accent2);
-    }
+    .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 1.4rem 1.5rem; }
+    .stat-card.featured { background: var(--accent2); color: #fff; border: 1px solid var(--accent2); }
     .stat-number {
       font-family: 'Fraunces', serif;
       font-size: 2.3rem;
@@ -219,7 +184,6 @@
       letter-spacing: 0.13em;
     }
     .stat-card.featured .stat-label { color: rgba(255,255,255,0.75); }
-
     .stack-pill-group { display: flex; flex-wrap: wrap; gap: 0.45rem; }
     .stack-pill {
       font-family: 'JetBrains Mono', monospace;
@@ -231,11 +195,7 @@
       border-radius: 2px;
       letter-spacing: 0.02em;
     }
-    .stack-pill.highlight {
-      background: var(--ink);
-      color: #fff;
-      border-color: var(--ink);
-    }
+    .stack-pill.highlight { background: var(--ink); color: #fff; border-color: var(--ink); }
 
     /* === SECTIONS === */
     section {
@@ -243,7 +203,6 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
     .section-header {
       display: flex;
       align-items: baseline;
@@ -280,10 +239,9 @@
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 4px;
-      padding: 2.2rem;
+      padding: 0;
       display: flex;
       flex-direction: column;
-      gap: 1.1rem;
       transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
       position: relative;
       overflow: hidden;
@@ -294,6 +252,7 @@
       width: 3px; height: 0;
       background: var(--accent);
       transition: height 0.35s ease;
+      z-index: 2;
     }
     .project-card:hover::before { height: 100%; }
     .project-card:hover {
@@ -302,16 +261,69 @@
       border-color: var(--border-strong);
     }
 
+    /* THUMBNAIL */
+    .project-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: var(--warm);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem;
+    }
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      transition: transform 0.4s ease;
+    }
+    .project-card:hover .project-thumb img { transform: scale(1.04); }
+
+    /* Placeholder SVG visual */
+    .project-thumb-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--warm) 0%, var(--cream) 100%);
+      transition: transform 0.4s ease;
+    }
+    .project-card:hover .project-thumb-placeholder { transform: scale(1.04); }
+
+    .project-body {
+      padding: 1.8rem 2.2rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      flex: 1;
+    }
+
     .project-card.featured {
       grid-column: span 2;
       display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 3rem;
-      align-items: start;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 0;
+      align-items: stretch;
       background: var(--warm);
       border: 1px solid var(--border-strong);
+      padding: 0;
+      overflow: hidden;
     }
     .project-card.featured::before { background: var(--accent2); }
+    .project-card.featured .project-body {
+      padding: 2.5rem 2.8rem;
+    }
+    .project-card.featured .project-thumb {
+      aspect-ratio: auto;
+      border-bottom: none;
+      border-left: 1px solid var(--border);
+      min-height: 100%;
+      background: var(--card);
+    }
 
     .project-tag {
       display: inline-block;
@@ -325,7 +337,7 @@
 
     .project-title {
       font-family: 'Fraunces', serif;
-      font-size: 1.45rem;
+      font-size: 1.4rem;
       font-weight: 700;
       color: var(--ink);
       line-height: 1.2;
@@ -388,6 +400,7 @@
       text-decoration: none;
       margin-top: 0.3rem;
       transition: gap 0.2s;
+      align-self: flex-start;
     }
     .project-card.featured .project-link { color: var(--accent2); }
     .project-link:hover { gap: 0.7rem; }
@@ -407,7 +420,7 @@
     .outcome-badge.blue { background: var(--accent2); }
     .outcome-badge.gold { background: var(--gold); }
 
-    /* Outros projetos compactos */
+    /* Outros projetos */
     .other-projects {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -462,7 +475,6 @@
       gap: 4.5rem;
       align-items: start;
     }
-
     .sobre-text p {
       font-size: 1.04rem;
       color: var(--muted);
@@ -471,7 +483,6 @@
     }
     .sobre-text p:last-child { margin-bottom: 0; }
     .sobre-text strong { color: var(--ink); font-weight: 500; }
-
     .sobre-pullquote {
       border-left: 3px solid var(--accent);
       padding: 0.5rem 0 0.5rem 1.5rem;
@@ -482,7 +493,6 @@
       color: var(--ink);
       line-height: 1.5;
     }
-
     .skills-col { display: flex; flex-direction: column; gap: 1.8rem; }
     .skill-group {
       background: var(--card);
@@ -499,9 +509,7 @@
       margin-bottom: 1rem;
     }
     .skill-group.cool .skill-group-label { color: var(--accent2); }
-    .skill-tags {
-      display: flex; flex-wrap: wrap; gap: 0.4rem;
-    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .skill-tag {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.72rem;
@@ -600,7 +608,6 @@
 
     .full-divider { width: 100%; height: 1px; background: var(--border); margin: 0; }
 
-    /* Animations */
     .fade-up {
       opacity: 0;
       transform: translateY(28px);
@@ -616,7 +623,8 @@
       .hero-right { order: -1; }
       section { padding: 4rem 1.5rem; }
       .projects-grid { grid-template-columns: 1fr; }
-      .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; gap: 1.5rem; }
+      .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+      .project-card.featured .project-thumb { border-left: none; border-top: 1px solid var(--border); min-height: auto; aspect-ratio: 16/10; }
       .other-projects { grid-template-columns: 1fr; }
       .sobre-grid { grid-template-columns: 1fr; gap: 3rem; }
       .formacao-item { grid-template-columns: 1fr; gap: 0.5rem; }
@@ -706,7 +714,7 @@
 
     <!-- DESTAQUE: ALURA STORE -->
     <div class="project-card featured fade-up">
-      <div>
+      <div class="project-body">
         <div class="project-tag">Destaque · Case de Negócio</div>
         <h3 class="project-title">Análise de Desempenho — Alura Store</h3>
         <p class="project-desc">
@@ -718,131 +726,176 @@
           <li>Visualizações para faturamento, categorias, avaliações, frete e distribuição geográfica</li>
           <li>Recomendação estratégica final escrita em linguagem de negócio</li>
         </ul>
+        <div class="project-tools">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">Pandas</span>
+          <span class="tool-tag">Matplotlib</span>
+          <span class="tool-tag">EDA</span>
+          <span class="tool-tag">Storytelling</span>
+        </div>
         <span class="outcome-badge blue">Decisão Orientada a Dados</span>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:1.2rem; justify-content:space-between; height:100%;">
-        <div>
-          <div class="skill-group-label" style="margin-bottom:0.8rem; color: var(--accent2);">Tecnologias</div>
-          <div class="project-tools">
-            <span class="tool-tag">Python</span>
-            <span class="tool-tag">Pandas</span>
-            <span class="tool-tag">Matplotlib</span>
-            <span class="tool-tag">Google Colab</span>
-            <span class="tool-tag">EDA</span>
-            <span class="tool-tag">Storytelling</span>
-          </div>
-        </div>
-        <div style="background:var(--card); border:1px solid var(--border); border-radius:4px; padding:1.2rem;">
-          <div class="skill-group-label" style="margin-bottom:0.5rem; color: var(--accent2);">O que demonstra</div>
-          <p style="font-size:0.85rem; color:var(--muted); line-height:1.65;">
-            Capacidade de transformar uma pergunta de negócio em análise estruturada e em uma recomendação acionável — não apenas em gráficos.
-          </p>
-        </div>
         <a href="https://github.com/danielli-arcari/Alura_Store" target="_blank" rel="noopener" class="project-link">
           Ver no GitHub <i class="fas fa-arrow-right"></i>
         </a>
+      </div>
+      <div class="project-thumb">
+        <img src="https://raw.githubusercontent.com/danielli-arcari/Alura_Store/main/images/download7.png"
+             alt="Participação no faturamento por loja — Alura Store"
+             loading="lazy">
       </div>
     </div>
 
     <!-- TELECOMX EDA -->
     <div class="project-card fade-up">
-      <div class="project-tag">Análise de Negócio · Churn</div>
-      <h3 class="project-title">Análise de Evasão de Clientes — TelecomX</h3>
-      <p class="project-desc">
-        Investigação completa sobre cancelamentos em uma operadora de telecom: pipeline ETL via API, análise exploratória e cinco recomendações estratégicas para reduzir churn.
-      </p>
-      <ul class="project-findings">
-        <li>Taxa de churn de 26,6% mapeada e segmentada por tipo de contrato, internet e tempo de permanência</li>
-        <li>Mais de 60% dos cancelamentos ocorrem nos primeiros meses — janela crítica de retenção</li>
-        <li>Contrato mensal apresenta churn ~14× maior que bienal (42% vs 3%)</li>
-      </ul>
-      <div class="project-tools">
-        <span class="tool-tag">Python</span>
-        <span class="tool-tag">Pandas</span>
-        <span class="tool-tag">Seaborn</span>
-        <span class="tool-tag">Requests</span>
-        <span class="tool-tag">ETL</span>
-        <span class="tool-tag">EDA</span>
+      <div class="project-thumb">
+        <img src="https://raw.githubusercontent.com/danielli-arcari/Analise_evasao_TelecomX/main/evasao%20por%20tipo%20do%20contrato.png"
+             alt="Evasão de clientes por tipo de contrato — TelecomX"
+             loading="lazy">
       </div>
-      <span class="outcome-badge">Caso Clássico de DA</span>
-      <a href="https://github.com/danielli-arcari/Analise_evasao_TelecomX" target="_blank" rel="noopener" class="project-link">
-        Ver no GitHub <i class="fas fa-arrow-right"></i>
-      </a>
+      <div class="project-body">
+        <div class="project-tag">Análise de Negócio · Churn</div>
+        <h3 class="project-title">Análise de Evasão de Clientes — TelecomX</h3>
+        <p class="project-desc">
+          Investigação completa sobre cancelamentos em uma operadora de telecom: pipeline ETL via API, análise exploratória e cinco recomendações estratégicas para reduzir churn.
+        </p>
+        <ul class="project-findings">
+          <li>Taxa de churn de 26,6% mapeada e segmentada por tipo de contrato e tempo de permanência</li>
+          <li>Mais de 60% dos cancelamentos ocorrem nos primeiros meses — janela crítica de retenção</li>
+          <li>Contrato mensal apresenta churn ~14× maior que bienal (42% vs 3%)</li>
+        </ul>
+        <div class="project-tools">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">Pandas</span>
+          <span class="tool-tag">Seaborn</span>
+          <span class="tool-tag">ETL</span>
+          <span class="tool-tag">EDA</span>
+        </div>
+        <span class="outcome-badge">Caso Clássico de DA</span>
+        <a href="https://github.com/danielli-arcari/Analise_evasao_TelecomX" target="_blank" rel="noopener" class="project-link">
+          Ver no GitHub <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
     </div>
 
     <!-- POPULAÇÃO PRISIONAL -->
     <div class="project-card fade-up">
-      <div class="project-tag">Dados Públicos · Projeto Autoral</div>
-      <h3 class="project-title">População Prisional de Minas Gerais (2017–2024)</h3>
-      <p class="project-desc">
-        Análise exploratória autoral de quase 8 anos de admissões no sistema prisional mineiro. Projeto que une análise técnica rigorosa com olhar crítico sobre desigualdades sociais.
-      </p>
-      <ul class="project-findings">
-        <li>328 mil registros limpos para 284 mil, removendo 44 mil duplicatas (13% do total)</li>
-        <li>95,78% da população é masculina; baixa escolaridade concentra mais de 60% das admissões</li>
-        <li>Queda de –14% em 2020 identificada e contextualizada com políticas pandêmicas</li>
-      </ul>
-      <div class="project-tools">
-        <span class="tool-tag">Python</span>
-        <span class="tool-tag">Pandas</span>
-        <span class="tool-tag">NumPy</span>
-        <span class="tool-tag">Seaborn</span>
-        <span class="tool-tag">Dados Abertos</span>
+      <div class="project-thumb">
+        <img src="https://raw.githubusercontent.com/danielli-arcari/analisededados_populacaoprisionalMG_2017a2024/main/01_variacao_anual.png"
+             alt="Variação percentual anual das admissões — População Prisional MG"
+             loading="lazy">
       </div>
-      <span class="outcome-badge gold">Iniciativa Própria</span>
-      <a href="https://github.com/danielli-arcari/analisededados_populacaoprisionalMG_2017a2024" target="_blank" rel="noopener" class="project-link">
-        Ver no GitHub <i class="fas fa-arrow-right"></i>
-      </a>
+      <div class="project-body">
+        <div class="project-tag">Dados Públicos · Projeto Autoral</div>
+        <h3 class="project-title">População Prisional de Minas Gerais (2017–2024)</h3>
+        <p class="project-desc">
+          Análise exploratória autoral de quase 8 anos de admissões no sistema prisional mineiro. Une análise técnica rigorosa com olhar crítico sobre desigualdades sociais.
+        </p>
+        <ul class="project-findings">
+          <li>328 mil registros limpos para 284 mil, removendo 44 mil duplicatas (13% do total)</li>
+          <li>95,78% da população é masculina; baixa escolaridade concentra mais de 60% das admissões</li>
+          <li>Queda de –14% em 2020 identificada e contextualizada com políticas pandêmicas</li>
+        </ul>
+        <div class="project-tools">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">Pandas</span>
+          <span class="tool-tag">NumPy</span>
+          <span class="tool-tag">Seaborn</span>
+          <span class="tool-tag">Dados Abertos</span>
+        </div>
+        <span class="outcome-badge gold">Iniciativa Própria</span>
+        <a href="https://github.com/danielli-arcari/analisededados_populacaoprisionalMG_2017a2024" target="_blank" rel="noopener" class="project-link">
+          Ver no GitHub <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
     </div>
 
     <!-- BD FACULDADE -->
     <div class="project-card fade-up">
-      <div class="project-tag">SQL · Modelagem Relacional</div>
-      <h3 class="project-title">Banco de Dados Acadêmico em MySQL</h3>
-      <p class="project-desc">
-        Modelagem ponta a ponta de um banco de dados relacional para gerenciamento acadêmico: levantamento de requisitos, modelagem conceitual e lógica, dicionário de dados e implementação física.
-      </p>
-      <ul class="project-findings">
-        <li>18 tabelas normalizadas até a 3ª Forma Normal, com tabelas associativas e auto-relacionamento (pré-requisitos)</li>
-        <li>Documentação completa: regras de negócio em .docx, dicionário de dados em .xlsx, diagrama lógico</li>
-        <li>Script DDL + DML + DQL idempotente, com queries analíticas usando JOINs e agregações</li>
-      </ul>
-      <div class="project-tools">
-        <span class="tool-tag">MySQL</span>
-        <span class="tool-tag">SQL</span>
-        <span class="tool-tag">brModelo</span>
-        <span class="tool-tag">Workbench</span>
-        <span class="tool-tag">Modelagem</span>
+      <div class="project-thumb">
+        <img src="https://raw.githubusercontent.com/danielli-arcari/BD_FACULDADE/main/L%C3%B3gico_ProjetoBDFaculdade.png"
+             alt="Diagrama lógico do banco de dados acadêmico"
+             loading="lazy">
       </div>
-      <span class="outcome-badge">SQL & Modelagem</span>
-      <a href="https://github.com/danielli-arcari/BD_FACULDADE" target="_blank" rel="noopener" class="project-link">
-        Ver no GitHub <i class="fas fa-arrow-right"></i>
-      </a>
+      <div class="project-body">
+        <div class="project-tag">SQL · Modelagem Relacional</div>
+        <h3 class="project-title">Banco de Dados Acadêmico em MySQL</h3>
+        <p class="project-desc">
+          Modelagem ponta a ponta de um banco de dados relacional para gerenciamento acadêmico: levantamento de requisitos, modelagem conceitual e lógica, dicionário de dados e implementação física.
+        </p>
+        <ul class="project-findings">
+          <li>18 tabelas normalizadas até a 3ª Forma Normal, com tabelas associativas e auto-relacionamento</li>
+          <li>Documentação completa: regras de negócio (docx), dicionário de dados (xlsx), diagrama lógico</li>
+          <li>Script DDL + DML + DQL idempotente, com queries analíticas usando JOINs e agregações</li>
+        </ul>
+        <div class="project-tools">
+          <span class="tool-tag">MySQL</span>
+          <span class="tool-tag">SQL</span>
+          <span class="tool-tag">brModelo</span>
+          <span class="tool-tag">Workbench</span>
+          <span class="tool-tag">Modelagem</span>
+        </div>
+        <span class="outcome-badge">SQL & Modelagem</span>
+        <a href="https://github.com/danielli-arcari/BD_FACULDADE" target="_blank" rel="noopener" class="project-link">
+          Ver no GitHub <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
     </div>
 
-    <!-- IMOBILIÁRIA -->
+    <!-- IMOBILIÁRIA (placeholder SVG até gerar imagem real) -->
     <div class="project-card fade-up">
-      <div class="project-tag">Wrangling · Feature Engineering</div>
-      <h3 class="project-title">Mercado Imobiliário do Rio de Janeiro</h3>
-      <p class="project-desc">
-        Preparação de dataset de mais de 32 mil imóveis do RJ para times de Machine Learning e Desenvolvimento Web: limpeza pesada, tratamento de outliers e criação de variáveis derivadas.
-      </p>
-      <ul class="project-findings">
-        <li>Outliers extremos identificados (ex: garagens com 1.966 vagas) e removidos com critério</li>
-        <li>22 tipos de imóveis e 162 bairros mapeados, com tratamento contextual de nulos</li>
-        <li>Engenharia de variáveis: valor mensal e anual agregando aluguel, condomínio e IPTU</li>
-      </ul>
-      <div class="project-tools">
-        <span class="tool-tag">Python</span>
-        <span class="tool-tag">Pandas</span>
-        <span class="tool-tag">NumPy</span>
-        <span class="tool-tag">Seaborn</span>
-        <span class="tool-tag">Feature Engineering</span>
+      <div class="project-thumb">
+        <div class="project-thumb-placeholder">
+          <svg width="100%" height="100%" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <linearGradient id="gradImob" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#b1593d" stop-opacity="0.85"/>
+                <stop offset="100%" stop-color="#2c4a52" stop-opacity="0.85"/>
+              </linearGradient>
+            </defs>
+            <!-- Grid lines -->
+            <line x1="40" y1="40" x2="40" y2="210" stroke="#c4bca8" stroke-width="1"/>
+            <line x1="40" y1="210" x2="370" y2="210" stroke="#c4bca8" stroke-width="1"/>
+            <!-- Bars (price ranges) -->
+            <rect x="60"  y="135" width="32" height="75"  fill="#b1593d" opacity="0.85"/>
+            <rect x="100" y="105" width="32" height="105" fill="#b1593d" opacity="0.9"/>
+            <rect x="140" y="80"  width="32" height="130" fill="#2c4a52" opacity="0.85"/>
+            <rect x="180" y="60"  width="32" height="150" fill="#2c4a52" opacity="0.9"/>
+            <rect x="220" y="90"  width="32" height="120" fill="#a47e3b" opacity="0.85"/>
+            <rect x="260" y="125" width="32" height="85"  fill="#a47e3b" opacity="0.85"/>
+            <rect x="300" y="155" width="32" height="55"  fill="#7c7468" opacity="0.7"/>
+            <!-- Title -->
+            <text x="40" y="28" font-family="Fraunces, serif" font-size="13" font-weight="700" fill="#1a1814">
+              Distribuição de aluguel por tipo
+            </text>
+            <text x="40" y="234" font-family="Inter, sans-serif" font-size="10" fill="#7c7468">
+              32.000 imóveis · 162 bairros · Rio de Janeiro
+            </text>
+          </svg>
+        </div>
       </div>
-      <span class="outcome-badge">Preparação de Dados</span>
-      <a href="https://github.com/danielli-arcari/projeto_imobiliaria" target="_blank" rel="noopener" class="project-link">
-        Ver no GitHub <i class="fas fa-arrow-right"></i>
-      </a>
+      <div class="project-body">
+        <div class="project-tag">Wrangling · Feature Engineering</div>
+        <h3 class="project-title">Mercado Imobiliário do Rio de Janeiro</h3>
+        <p class="project-desc">
+          Preparação de dataset de mais de 32 mil imóveis do RJ para times de Machine Learning e Desenvolvimento Web: limpeza pesada, tratamento de outliers e criação de variáveis derivadas.
+        </p>
+        <ul class="project-findings">
+          <li>Outliers extremos identificados (ex: garagens com 1.966 vagas) e removidos com critério</li>
+          <li>22 tipos de imóveis e 162 bairros mapeados, com tratamento contextual de nulos</li>
+          <li>Engenharia de variáveis: valor mensal e anual agregando aluguel, condomínio e IPTU</li>
+        </ul>
+        <div class="project-tools">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">Pandas</span>
+          <span class="tool-tag">NumPy</span>
+          <span class="tool-tag">Seaborn</span>
+          <span class="tool-tag">Feature Engineering</span>
+        </div>
+        <span class="outcome-badge">Preparação de Dados</span>
+        <a href="https://github.com/danielli-arcari/projeto_imobiliaria" target="_blank" rel="noopener" class="project-link">
+          Ver no GitHub <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
     </div>
 
   </div>
@@ -872,7 +925,7 @@
 
       <div class="other-card fade-up">
         <div class="other-tag">Python + ORM</div>
-        <h4 class="other-title">SQLAlchemy & Instituição Financeira</h4>
+        <h4 class="other-title">SQLAlchemy &amp; Instituição Financeira</h4>
         <p class="other-desc">Modelagem e persistência de dados financeiros usando ORM em Python e SQLite.</p>
         <a href="https://github.com/danielli-arcari/InstituicaoFinanceira_com_SQLAlchemy" target="_blank" rel="noopener" class="other-link">GitHub <i class="fas fa-arrow-right"></i></a>
       </div>
@@ -1063,7 +1116,6 @@
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // Stagger animation delay for project cards
   document.querySelectorAll('.project-card.fade-up, .other-card.fade-up').forEach((card, i) => {
     card.style.transitionDelay = `${i * 0.06}s`;
   });
