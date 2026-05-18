@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08080B" />
+  <title>Churn com ML · Case · Danielli Arçari</title>
+  <meta name="description" content="Extensão do projeto TelecomX com modelos de classificação supervisionada para prever evasão." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/project.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23080808'/%3E%3Ctext x='16' y='22' font-family='Inter,sans-serif' font-size='18' font-weight='700' fill='%236366F1' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<header class="nav" role="banner">
+  <div class="container nav__inner">
+    <a href="../index.html" class="nav__brand"><span class="nav__brand-dot" aria-hidden="true"></span><span>Danielli Arçari</span></a>
+    <nav class="nav__links" aria-label="Navegação">
+      <a class="nav__link" href="../index.html#projetos">Projetos</a>
+      <a class="nav__link" href="../index.html#sobre">Sobre</a>
+      <a class="nav__link nav__cta btn btn--ghost btn--sm" href="../index.html#contato">Contato
+        <svg class="btn__icon btn__icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="container case-breadcrumb">
+    <a href="../index.html#projetos" class="case-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Todos os projetos
+    </a>
+  </div>
+
+  <section class="container case-header">
+    <p class="eyebrow eyebrow--accent case-header__eyebrow">06 · Machine Learning</p>
+    <h1 class="case-header__title">Prever o churn antes <em>que ele aconteça.</em></h1>
+    <p class="case-header__lede">
+      Extensão do projeto TelecomX: depois de mapear quem cancelava e por quê, o próximo passo natural foi construir modelos
+      de classificação supervisionada capazes de prever o churn individual — para que retenção pudesse ser proativa, não
+      reativa.
+    </p>
+    <div class="case-meta">
+      <div class="case-meta__item"><span class="case-meta__label">Papel</span><span class="case-meta__value">Modelagem preditiva</span></div>
+      <div class="case-meta__item"><span class="case-meta__label">Período</span><span class="case-meta__value">2025</span></div>
+      <div class="case-meta__item"><span class="case-meta__label">Tipo</span><span class="case-meta__value">Classificação binária</span></div>
+      <div class="case-meta__item"><span class="case-meta__label">Stack</span><span class="case-meta__value">Scikit-learn · Python</span></div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="case-hero-viz">
+      <div class="case-hero-viz__inner">
+        <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+          <text x="40" y="30" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="rgba(255,255,255,0.85)">Matriz de confusão — Random Forest</text>
+          <text x="40" y="48" font-family="JetBrains Mono, monospace" font-size="10" fill="rgba(255,255,255,0.35)">validação · 30% da base</text>
+
+          <g>
+            <rect x="240" y="80"  width="200" height="100" fill="#6366F1" fill-opacity="0.7"  stroke="rgba(255,255,255,0.10)"/>
+            <rect x="440" y="80"  width="200" height="100" fill="#6366F1" fill-opacity="0.18" stroke="rgba(255,255,255,0.10)"/>
+            <rect x="240" y="180" width="200" height="100" fill="#6366F1" fill-opacity="0.22" stroke="rgba(255,255,255,0.10)"/>
+            <rect x="440" y="180" width="200" height="100" fill="#6366F1" fill-opacity="0.6"  stroke="rgba(255,255,255,0.10)"/>
+
+            <text x="340" y="135" font-family="Instrument Serif, serif" font-size="36" fill="#F4F4F5" text-anchor="middle">1.428</text>
+            <text x="340" y="165" font-family="JetBrains Mono, monospace" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">TN · acerto não-churn</text>
+
+            <text x="540" y="135" font-family="Instrument Serif, serif" font-size="28" fill="rgba(255,255,255,0.75)" text-anchor="middle">186</text>
+            <text x="540" y="165" font-family="JetBrains Mono, monospace" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="middle">FP · alarme falso</text>
+
+            <text x="340" y="235" font-family="Instrument Serif, serif" font-size="28" fill="rgba(255,255,255,0.75)" text-anchor="middle">204</text>
+            <text x="340" y="265" font-family="JetBrains Mono, monospace" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="middle">FN · churn não detectado</text>
+
+            <text x="540" y="235" font-family="Instrument Serif, serif" font-size="36" fill="#F4F4F5" text-anchor="middle">421</text>
+            <text x="540" y="265" font-family="JetBrains Mono, monospace" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">TP · churn previsto certo</text>
+          </g>
+
+          <text x="340" y="70"  font-family="JetBrains Mono, monospace" font-size="11" fill="rgba(255,255,255,0.55)" text-anchor="middle">previsto: não-churn</text>
+          <text x="540" y="70"  font-family="JetBrains Mono, monospace" font-size="11" fill="rgba(255,255,255,0.55)" text-anchor="middle">previsto: churn</text>
+          <text x="225" y="135" font-family="JetBrains Mono, monospace" font-size="11" fill="rgba(255,255,255,0.55)" text-anchor="end">real: não-churn</text>
+          <text x="225" y="235" font-family="JetBrains Mono, monospace" font-size="11" fill="rgba(255,255,255,0.55)" text-anchor="end">real: churn</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="container case-body">
+
+    <aside class="case-toc" aria-label="Sumário">
+      <p class="case-toc__label">Sumário</p>
+      <a href="#contexto">Contexto</a>
+      <a href="#problema">Problema</a>
+      <a href="#abordagem">Abordagem</a>
+      <a href="#achados">Resultados</a>
+      <a href="#decisao">Decisão</a>
+      <a href="#stack">Stack</a>
+      <a href="#aprendizados">Aprendizados</a>
+    </aside>
+
+    <article class="case-content">
+
+      <section id="contexto">
+        <h2>Contexto</h2>
+        <p>
+          Análise descritiva responde "o que aconteceu". Análise preditiva responde "o que vai acontecer".
+          Depois de mapear churn na fase exploratória, o próximo movimento é antecipar o cliente que vai sair —
+          enquanto ainda dá tempo de agir.
+        </p>
+      </section>
+
+      <section id="problema">
+        <h2>Problema</h2>
+        <p>
+          Construir um classificador binário que, dadas as variáveis comportamentais e contratuais do cliente,
+          retorne a probabilidade dele cancelar nos próximos meses. <strong>Métrica prioritária: recall sobre churn</strong> —
+          é mais caro deixar um cancelamento passar do que disparar um alerta falso.
+        </p>
+      </section>
+
+      <section id="abordagem">
+        <h2>Abordagem</h2>
+        <ul>
+          <li><strong>Pré-processamento</strong> — encoding de variáveis categóricas, tratamento de desbalanceamento de classes.</li>
+          <li><strong>Split estratificado</strong> — 70/30 preservando proporção da variável alvo.</li>
+          <li><strong>Comparação de baseline</strong> — Logistic Regression, Decision Tree, Random Forest, KNN.</li>
+          <li><strong>Avaliação criteriosa</strong> — acurácia não é o foco; recall, precisão e F1 sobre a classe minoritária (churn) são.</li>
+          <li><strong>Análise de feature importance</strong> — quais variáveis o modelo aprendeu a usar?</li>
+        </ul>
+      </section>
+
+      <section id="achados">
+        <h2>Resultados</h2>
+
+        <div class="case-stats">
+          <div class="case-stat">
+            <div class="case-stat__value">82<em>%</em></div>
+            <div class="case-stat__label">Acurácia geral · Random Forest</div>
+          </div>
+          <div class="case-stat">
+            <div class="case-stat__value">67<em>%</em></div>
+            <div class="case-stat__label">Recall sobre churn (a métrica que importa)</div>
+          </div>
+          <div class="case-stat">
+            <div class="case-stat__value">3</div>
+            <div class="case-stat__label">Variáveis dominantes: contrato, tenure, pagamento</div>
+          </div>
+        </div>
+
+        <div class="case-findings">
+          <p class="case-findings__title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            O que aprendi com os modelos
+          </p>
+          <ul>
+            <li><strong>Random Forest superou os baselines</strong> em recall sobre a classe minoritária — métrica que importa em retenção.</li>
+            <li><strong>As três variáveis dominantes</strong> coincidem com os achados da fase exploratória: tipo de contrato, tempo de permanência, forma de pagamento.</li>
+            <li><strong>Desbalanceamento de classes era real</strong> — sem tratá-lo, todos os modelos caíam em "prever sempre não-churn" e ainda assim ter 73% de acurácia.</li>
+            <li><strong>Trade-off recall × precisão explícito</strong> — apresentei matriz de confusão para o decisor escolher onde calibrar o threshold.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="decisao">
+        <h2>Decisão</h2>
+        <blockquote class="case-quote">
+          O modelo final não é "o mais acurado". É o que melhor responde à pergunta de negócio: dado o custo de
+          um cancelamento, quanto vale um alarme falso? A escolha do threshold passou a ser deliberada, não default.
+        </blockquote>
+        <p>
+          Entreguei o pipeline completo — pré-processamento, treino, avaliação, persistência — com documentação
+          explicando como recalibrar o threshold conforme o orçamento de retenção mude.
+        </p>
+      </section>
+
+      <section id="stack">
+        <h2>Stack</h2>
+        <div class="case-stack tag-group">
+          <span class="tag tag--accent">Python</span>
+          <span class="tag tag--accent">Scikit-learn</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">Random Forest</span>
+          <span class="tag">Logistic Regression</span>
+          <span class="tag">Matplotlib</span>
+        </div>
+      </section>
+
+      <section id="aprendizados">
+        <h2>Aprendizados</h2>
+        <p>
+          O aprendizado mais importante deste projeto foi <strong>tirar acurácia do pedestal</strong>. Em classes
+          desbalanceadas, acurácia mente — um modelo burro que prediz sempre a classe majoritária pode ter 70%+ de acurácia.
+          Recall, precisão e F1 contam a história real.
+        </p>
+        <p>
+          Aprendi também que <strong>modelo é só metade da resposta</strong>. A outra metade é apresentar o trade-off para o
+          decisor: cada falso negativo custa X, cada falso positivo custa Y, e a escolha do threshold de probabilidade
+          deveria refletir essa relação — não ser deixada no default de 0,5.
+        </p>
+      </section>
+
+      <div class="case-actions">
+        <a href="https://github.com/danielli-arcari/telecomX-churn-analysisML" target="_blank" rel="noopener" class="btn btn--accent">
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.56 9.56 0 0 1 12 6.8c.85 0 1.71.11 2.5.34 1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+          Ver no GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/danielli-arcari" target="_blank" rel="noopener" class="btn btn--ghost">
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
+          Conversar no LinkedIn
+        </a>
+      </div>
+
+    </article>
+  </div>
+
+  <section class="container case-next">
+    <div class="case-next__grid">
+      <a href="imobiliaria.html" class="case-next__card">
+        <p class="case-next__label">Case anterior · 05 / 08</p>
+        <h3 class="case-next__title">Imobiliária — RJ</h3>
+        <span class="case-next__arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(180deg);"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          Voltar
+        </span>
+      </a>
+      <a href="gee-brasil.html" class="case-next__card">
+        <p class="case-next__label">Próximo case · 07 / 08</p>
+        <h3 class="case-next__title">Emissões de GEE no Brasil</h3>
+        <span class="case-next__arrow">
+          Continuar
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:1px solid var(--border-subtle);padding-top:var(--s-8);">
+        <span>© <span id="year">2026</span> Danielli Arçari · axiadmc@gmail.com</span>
+        <div class="footer__socials">
+          <a class="footer__social" href="https://www.linkedin.com/in/danielli-arcari" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg></a>
+          <a class="footer__social" href="https://github.com/danielli-arcari" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.56 9.56 0 0 1 12 6.8c.85 0 1.71.11 2.5.34 1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg></a>
+          <a class="footer__social" href="mailto:axiadmc@gmail.com" aria-label="E-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script src="../js/main.js" defer></script>
+</body>
+</html>
