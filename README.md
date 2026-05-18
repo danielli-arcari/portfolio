@@ -1,170 +1,200 @@
-# portifolio de dados
+# Portfólio · Danielli Arçari
 
-# 🌐 Portfólio · Danielli Arçari
-
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
-![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)
-![Status](https://img.shields.io/badge/Status-Online-brightgreen)
-
-> Site portfólio de **Danielli Meilene Coutinho Arçari**, analista de dados em transição de carreira.
-> Apresenta projetos selecionados em SQL, Python e análise exploratória aplicados a problemas reais de negócio.
-
-🔗 **Acesse:** [danielliarcari.vercel.app](https://danielliarcari.vercel.app/)
+Portfólio profissional construído sob medida, com estética premium inspirada em
+Linear, Vercel e Raycast. Foco em maturidade visual, hierarquia tipográfica
+forte e UX fluida.
 
 ---
 
-## 🧭 Sobre
+## Stack
 
-Este repositório contém o código-fonte do meu site portfólio — uma página única, estática, construída em HTML/CSS/JavaScript puro e hospedada na Vercel. O site foi pensado para apresentar de forma direta:
+- **HTML5** semântico
+- **CSS3** com custom properties (design tokens)
+- **JavaScript vanilla** (sem framework, sem build step)
+- **Google Fonts** — Inter, Instrument Serif, JetBrains Mono
+- **SVG inline** para todos os gráficos/thumbnails (sem dependência de imagens)
 
-- Os projetos de dados que considero mais relevantes do meu GitHub
-- Minha trajetória de transição do Direito para a área de Dados
-- Meu stack técnico e formação em andamento
-- Canais de contato para oportunidades
-
-O design segue uma estética **editorial**, com tipografia serifada (Fraunces), paleta em tons terrosos e foco em legibilidade. A ideia é que o site **pareça um documento bem escrito**, não um template tech genérico.
-
----
-
-## 🎨 Identidade visual
-
-| Elemento | Especificação |
-|---|---|
-| **Tipografia principal** | Fraunces (serifada, contemporânea) |
-| **Tipografia secundária** | Inter (sans-serif para leitura) |
-| **Tipografia de código** | JetBrains Mono |
-| **Paleta** | Creme aquecido, carvão profundo, terracota queimada, azul-petróleo |
-| **Layout** | Single-page com seções: Hero · Projetos · Sobre · Formação |
-
-### Paleta de cores
-
-```css
---paper:   #f5f1e8;   /* Fundo creme aquecido */
---ink:     #1a1814;   /* Carvão profundo */
---accent:  #b1593d;   /* Terracota queimada — personalidade */
---accent2: #2c4a52;   /* Azul-petróleo profundo — dados */
---gold:    #a47e3b;   /* Detalhes e badges */
-```
-
-A combinação foi pensada para transmitir **calor humano + precisão analítica + sofisticação profissional** — três atributos que considero essenciais para uma profissional vinda do Direito que hoje trabalha com dados.
+Zero build step, zero dependências. Abre direto no navegador ou faz deploy
+estático em qualquer lugar (Vercel, Netlify, GitHub Pages, Cloudflare Pages).
 
 ---
 
-## 📂 Estrutura do Repositório
+## Estrutura de pastas
 
 ```
-📦 portfolio
- ┣ 📄 index.html       <- Página única com todo o conteúdo
- ┗ 📄 README.md
+portfolio/
+├── index.html                  ← Home (Hero · Sobre · Stack · Projetos · Trajetória · Contato)
+│
+├── projetos/                   ← 8 páginas de case (uma por projeto)
+│   ├── alura-store.html        ← 01 · Análise comparativa de 4 lojas (case de negócio)
+│   ├── telecomx.html           ← 02 · Análise de churn em operadora
+│   ├── populacao-prisional.html← 03 · Dados públicos · sistema prisional MG
+│   ├── bd-faculdade.html       ← 04 · Modelagem MySQL ponta a ponta
+│   ├── imobiliaria.html        ← 05 · Data wrangling · 32 mil imóveis
+│   ├── telecomx-ml.html        ← 06 · Machine learning · churn preditivo
+│   ├── gee-brasil.html         ← 07 · Análise ambiental · SEEG
+│   └── sqlalchemy.html         ← 08 · ORM + persistência
+│
+├── css/
+│   ├── tokens.css              ← Design system (cores, tipografia, espaçamento, motion)
+│   ├── base.css                ← Reset, defaults, background ambient, accessibility
+│   ├── components.css          ← Nav, Buttons, Tags, Cards, Footer (primitivas)
+│   ├── home.css                ← Estilos específicos da home (hero, marquee, stack, projects)
+│   └── project.css             ← Estilos específicos das páginas de case (TOC, viz, stats)
+│
+├── js/
+│   └── main.js                 ← IntersectionObserver, spotlight cursor, scrollspy, nav state
+│
+└── README.md                   ← Este arquivo
 ```
-
-Tudo em um único arquivo `index.html`: HTML semântico, CSS inline no `<head>` e JavaScript leve no final do `<body>` (apenas para animações fade-up via IntersectionObserver).
-
-**Por que página única e tudo inline?**
-
-- Carregamento instantâneo, sem requests extras
-- Fácil de manter — um arquivo, uma fonte de verdade
-- Hospedagem trivial (qualquer estática serve)
-- Recrutador abre, lê tudo e fecha. Sem distrações.
 
 ---
 
-## 🚀 Como rodar localmente
+## Decisões de design
+
+### Paleta
+
+| Token | Hex | Uso |
+|---|---|---|
+| `--bg-base` | `#08080B` | Background principal — preto profundo, não puro |
+| `--bg-card` | `#131318` | Cards e superfícies elevadas |
+| `--accent` | `#6366F1` | Iris/índigo — único acento de cor (todo o resto é monocromático) |
+| `--accent-hover` | `#818CF8` | Estados hover, links, valores destacados |
+| `--teal` | `#2DD4BF` | Acento secundário, usado com parcimônia |
+| `--fg-primary` | `#F4F4F5` | Texto principal — não branco puro, evita brilho excessivo |
+| `--fg-tertiary` | `#8A8A93` | Texto secundário, labels |
+
+**Por que índigo?** Cor neutra-mas-distintiva, associada a tech sério (Linear,
+Vercel). Não tem o peso pop do roxo, nem a frieza do azul corporativo.
+
+### Tipografia
+
+- **Inter** — body e headings. Padrão de mercado SaaS premium.
+- **Instrument Serif** — itálicos em destaque ("dados", "decisão", etc.).
+  Quebra o tom 100% sans, dá uma assinatura editorial. Linear faz isso.
+- **JetBrains Mono** — labels técnicos, tags, datas. Sinaliza identidade tech.
+
+Escala modular 1.25× com clamp() para responsividade fluida sem media queries.
+
+### Motion
+
+Tudo curto, tudo `ease-out-expo` (curva natural). Reveal-on-scroll com
+IntersectionObserver, hover lift de 2px em cards, spotlight radial que segue
+o cursor. `prefers-reduced-motion` desativa tudo automaticamente.
+
+### Acessibilidade
+
+- HTML semântico (`<main>`, `<nav>`, `<article>`, `<aside>`, `<section>`)
+- Headings com hierarquia correta (h1 único por página, h2/h3 aninhados)
+- `aria-label` em ícones e links sem texto
+- Focus-visible com outline de 2px (não removido)
+- Contraste WCAG AA em todos os textos
+- Imagens decorativas com `aria-hidden`
+- Scroll-padding-top para anchor jumps respeitarem o nav fixo
+- Suporte a `prefers-reduced-motion`
+
+---
+
+## Como rodar localmente
+
+**Opção 1 — VS Code Live Server** (mais simples):
+
+```
+botão direito em index.html → "Open with Live Server"
+```
+
+**Opção 2 — Python**:
 
 ```bash
-# 1. Clone o repositório
-git clone https://github.com/danielli-arcari/portfolio.git
 cd portfolio
-
-# 2. Abra o index.html no navegador
-# (não precisa de servidor — é HTML puro)
-
-# Ou, se preferir servir via http:
 python -m http.server 8000
-# Acesse http://localhost:8000
+# abrir http://localhost:8000
+```
+
+**Opção 3 — Node**:
+
+```bash
+npx serve .
+```
+
+Como tudo é estático, abrir `index.html` direto no navegador (`file://`)
+também funciona — mas alguns navegadores limitam fetches e CSS via file://
+em corner cases. Servir local é mais confiável.
+
+---
+
+## Como fazer deploy
+
+### Vercel (recomendado — você já usa)
+
+```bash
+# instalar uma vez
+npm i -g vercel
+
+# fazer deploy
+cd portfolio
+vercel
+```
+
+Vai pedir login na primeira vez. Depois, cada `vercel --prod` atualiza o site
+em produção. O projeto está pré-configurado para funcionar sem nenhum ajuste
+porque é estático puro.
+
+### Netlify
+
+Arrasta a pasta `portfolio/` inteira para [app.netlify.com/drop](https://app.netlify.com/drop).
+Deploy em segundos.
+
+### GitHub Pages
+
+```bash
+# na raiz do repositório
+git init
+git add .
+git commit -m "portfolio"
+git push origin main
+
+# settings → pages → branch: main / root
 ```
 
 ---
 
-## 📊 Projetos apresentados
+## Como adicionar um novo case
 
-O site destaca 5 projetos principais selecionados como mais relevantes para a área de Análise de Dados:
+1. Duplique uma das páginas em `projetos/` (recomendo `bd-faculdade.html` —
+   estrutura mais limpa)
+2. Atualize: título, lede, meta (papel/período/tipo/stack), hero viz SVG, e o
+   conteúdo de cada `<section>` (Contexto, Problema, Abordagem, Achados,
+   Decisão, Stack, Aprendizados)
+3. Atualize a navegação "próximo / anterior" no rodapé da nova página
+4. Adicione um novo `<a class="project-card">` em `index.html` na seção
+   `#projetos` — copie um dos cards existentes e ajuste
 
-| # | Projeto | Foco |
-|---|---|---|
-| 🥇 | [Alura Store](https://github.com/danielli-arcari/Alura_Store) | Case de negócio · decisão estratégica |
-| 2 | [TelecomX — Evasão de Clientes](https://github.com/danielli-arcari/Analise_evasao_TelecomX) | Análise de churn (clássico de DA) |
-| 3 | [População Prisional MG (2017–2024)](https://github.com/danielli-arcari/analisededados_populacaoprisionalMG_2017a2024) | Projeto autoral · dados públicos |
-| 4 | [Banco de Dados Acadêmico em MySQL](https://github.com/danielli-arcari/BD_FACULDADE) | SQL puro · modelagem relacional |
-| 5 | [Mercado Imobiliário do RJ](https://github.com/danielli-arcari/projeto_imobiliaria) | Wrangling · feature engineering |
-
-E mais 3 projetos complementares em "Outros projetos":
-
-- [TelecomX com Machine Learning](https://github.com/danielli-arcari/telecomX-churn-analysisML)
-- [Emissões de GEE no Brasil](https://github.com/danielli-arcari/analise_gases_efeitoestufa)
-- [SQLAlchemy & Instituição Financeira](https://github.com/danielli-arcari/InstituicaoFinanceira_com_SQLAlchemy)
+Tudo o que muda entre páginas é conteúdo. A estrutura HTML e o CSS são
+compartilhados — então mudanças visuais propagam automaticamente.
 
 ---
 
-## 🛠 Decisões técnicas
+## Performance
 
-**Por que HTML/CSS/JS puro em vez de React ou Next.js?**
+- **Sem imagens raster** — todos os gráficos são SVG inline
+- **Sem build, sem JS frameworks** — tempo de carregamento mínimo
+- **Fontes via Google Fonts** com `preconnect` para minimizar handshake
+- **CSS modular** — só carrega o que cada página precisa
+- **Lazy loading natural** — IntersectionObserver evita animações fora da tela
 
-Porque para um portfólio de uma página, framework é overengineering. HTML puro carrega mais rápido, é mais fácil de manter, e mostra que sei o que estou fazendo sem precisar esconder atrás de abstrações.
-
-**Por que tudo inline (CSS dentro de `<head>`)?**
-
-Mesma lógica: zero requests extras. A página renderiza no primeiro byte.
-
-**Por que tipografia serifada?**
-
-Serifa traz peso editorial. Combina com a ideia de que o conteúdo merece ser lido como um documento, não como uma landing genérica.
-
-**Por que essa paleta terrosa?**
-
-Sou mineira (Itabira/MG). Quis uma paleta que evocasse terra e calma, em vez do azul-cromado de SaaS. E o terracota com azul-petróleo cria contraste interessante: o quente (eu, humana) e o frio (os dados, precisos).
+Espera-se Lighthouse 95+ em todas as métricas (Performance, Accessibility,
+Best Practices, SEO) com deploy estático em Vercel/Netlify.
 
 ---
 
-## ♿ Acessibilidade
+## Próximos passos sugeridos
 
-- HTML semântico (`<header>`, `<nav>`, `<section>`, `<footer>`)
-- Hierarquia correta de headings
-- Contraste de cores conforme WCAG AA
-- Foco visível em elementos interativos
-- Imagens com `alt` quando aplicável
-- Suporte a navegação por teclado
-- Animações respeitam `prefers-reduced-motion` (no roadmap)
+- [ ] Adicionar foto pessoal na hero section (atualmente clean, sem foto — fica a critério)
+- [ ] Configurar Open Graph image customizada para preview no LinkedIn/WhatsApp
+- [ ] Considerar adicionar um botão de download de CV em PDF
+- [ ] Internacionalização para inglês (estágios remotos internacionais)
 
 ---
 
-## 🚧 Roadmap
-
-- [ ] Versão em inglês (para vagas internacionais)
-- [ ] Modo escuro opcional
-- [ ] Suporte a `prefers-reduced-motion`
-- [ ] Thumbnails dos projetos com preview visual
-- [ ] Página dedicada para cada projeto destacado
-- [ ] Otimização de imagens (formato WebP)
-
----
-
-## 📬 Contato
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/danielli-arcari/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/danielli-arcari)
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white)](mailto:axiadmc@gmail.com)
-[![Portfólio](https://img.shields.io/badge/Portf%C3%B3lio-Vercel-black?style=flat&logo=vercel&logoColor=white)](https://danielliarcari.vercel.app/)
-
-📍 Itabira/MG · Brasil
-
----
-
-## 👩‍💻 Autora
-
-**Danielli Meilene Coutinho Arçari**
-
-Graduanda em Ciência da Computação (UNINTER), em transição para a área de Dados após 17 anos no Direito. Apaixonada por transformar dados em decisões claras e bem fundamentadas.
-
+© 2026 Danielli Arçari · axiadmc@gmail.com
